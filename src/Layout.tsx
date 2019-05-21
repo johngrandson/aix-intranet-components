@@ -65,7 +65,7 @@ class Layout extends Component<Props, State> {
           bgColor=''
           logo={{
             innerLink: "/admin/index",
-            imgSrc: "https://raw.githubusercontent.com/riquenunes/all-investx-components/master/src/assets/img/brand/logo.png?token=AAYP4NFILUTA72GUH42OGL245Q4TK",
+            imgSrc: "/logo.png",
             imgAlt: "Logo AllInvest X"
           }}
         />
