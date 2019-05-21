@@ -1,0 +1,89 @@
+import * as React from "react";
+import { Component } from "react";
+// reactstrap components
+import { Container } from "reactstrap";
+// core components
+import AdminNavbar from "./AdminNavbar";
+import AdminFooter from "./AdminFooter";
+import Sidebar from "./Sidebar";
+import UserHeader from "./UserHeader";
+
+interface RouteDefinition {
+  path: string;
+  name: string;
+  icon: string;
+  component: any;
+}
+
+interface Props {
+  routesFactory: () => Promise<RouteDefinition[]>;
+}
+
+interface State {
+  routes: RouteDefinition[];
+}
+
+class Layout extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = { routes: [] };
+  }
+
+  async componentDidMount() {
+    this.setState({
+      routes: await this.props.routesFactory()
+    });
+  }
+
+  componentDidUpdate() {
+    document.documentElement.scrollTop = 0;
+
+    if (document.scrollingElement) {
+      document.scrollingElement.scrollTop = 0;
+    }
+
+    // (this.refs.mainContent as HTMLDivElement).scrollTop = 0;
+  }
+  getBrandText = () => {
+    const { routes } = this.state;
+
+    for (let i = 0; i < routes.length; i++) {
+      if (
+        window.location.pathname.indexOf(routes[i].path) !== -1
+      ) {
+        return routes[i].name;
+      }
+    }
+
+    return "";
+  };
+  render() {
+    return (
+      <>
+        <Sidebar
+          {...this.props}
+          routes={this.state.routes}
+          bgColor=''
+          logo={{
+            innerLink: "/admin/index",
+            imgSrc: "https://raw.githubusercontent.com/riquenunes/all-investx-components/master/src/assets/img/brand/logo.png?token=AAYP4NFILUTA72GUH42OGL245Q4TK",
+            imgAlt: "Logo AllInvest X"
+          }}
+        />
+        <div className="main-content">
+          <AdminNavbar
+            {...this.props}
+            brandText={this.getBrandText()}
+          />
+          <UserHeader />
+          {this.props.children}
+          <Container fluid>
+            <AdminFooter />
+          </Container>
+        </div>
+      </>
+    );
+  }
+}
+
+export default Layout;
