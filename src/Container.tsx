@@ -14,7 +14,7 @@ export default (props: Props) => (
         <Card className="shadow">
           {
             props.title &&
-            <CardHeader className="border-0">
+            <CardHeader>
               <h3 className="mb-0">{props.title}</h3>
             </CardHeader>
           }

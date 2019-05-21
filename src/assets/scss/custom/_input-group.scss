@@ -3,3 +3,11 @@
 //
 
 @import "../core/forms/input-group";
+
+.input-group-prepend,
+.input-group-append {
+  .btn {
+    border: solid 1px $input-border-color;
+    box-shadow: none;
+  }
+}

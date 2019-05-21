@@ -30,18 +30,19 @@
 //
 
 .nav-tabs {
-  border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
-
   .nav-item {
     margin-bottom: -$nav-tabs-border-width;
   }
 
   .nav-link {
-    border: $nav-tabs-border-width solid transparent;
-    @include border-top-radius($nav-tabs-border-radius);
+    border-style: solid;
+    border-width: $nav-tabs-link-border-width;
+    border-color: $nav-tabs-link-border-color;
+    color: $nav-tabs-link-color;
+    padding: $nav-tabs-link-padding-y $nav-tabs-link-padding-x;
 
     @include hover-focus {
-      border-color: $nav-tabs-link-hover-border-color;
+      color: $nav-tabs-link-color;
     }
 
     &.disabled {
