@@ -12,7 +12,6 @@ interface RouteDefinition {
   path: string;
   name: string;
   icon: string;
-  component: any;
 }
 
 interface Props {
