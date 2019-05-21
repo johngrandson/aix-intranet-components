@@ -9937,7 +9937,7 @@ var AdminNavbar = /** @class */ (function (_super) {
                             React.createElement(DropdownToggle, { className: "pr-0", nav: true },
                                 React.createElement(Media, { className: "align-items-center" },
                                     React.createElement("span", { className: "avatar avatar-sm rounded-circle" },
-                                        React.createElement("img", { alt: "...", src: "./assets/img/theme/team-1-800x800.jpg" })),
+                                        React.createElement("img", { alt: "...", src: "/bg.jpg" })),
                                     React.createElement(Media, { className: "ml-2 d-none d-lg-block" },
                                         React.createElement("span", { className: "mb-0 text-sm font-weight-bold" }, this.state.user.name)))),
                             React.createElement(DropdownMenu, { className: "dropdown-menu-arrow", right: true },
@@ -10125,7 +10125,7 @@ var Layout = /** @class */ (function (_super) {
         return (React.createElement(React.Fragment, null,
             React.createElement(Sidebar, __assign({}, this.props, { routes: this.state.routes, bgColor: '', logo: {
                     innerLink: "/admin/index",
-                    imgSrc: "https://raw.githubusercontent.com/riquenunes/all-investx-components/master/src/assets/img/brand/logo.png?token=AAYP4NFILUTA72GUH42OGL245Q4TK",
+                    imgSrc: "/logo.png",
                     imgAlt: "Logo AllInvest X"
                 } })),
             React.createElement("div", { className: "main-content" },
