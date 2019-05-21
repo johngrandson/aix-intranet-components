@@ -11,7 +11,7 @@ class UserHeader extends Component<{}> {
             minHeight: 380,
             marginBottom: '-16rem',
             backgroundImage:
-              "url(./assets/img/theme/img-1.jpg)",
+              "url(/bg.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "center center"
           }}
