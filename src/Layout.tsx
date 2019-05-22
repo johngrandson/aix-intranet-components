@@ -7,11 +7,14 @@ import AdminNavbar from "./AdminNavbar";
 import AdminFooter from "./AdminFooter";
 import Sidebar from "./Sidebar";
 import UserHeader from "./UserHeader";
+import { isAuthorized } from "./services";
+
 
 interface RouteDefinition {
   path: string;
   name: string;
   icon: string;
+  role: string;
 }
 
 interface Props {
@@ -29,9 +32,8 @@ class Layout extends Component<Props, State> {
   }
 
   async componentDidMount() {
-    this.setState({
-      routes: await this.props.routesFactory()
-    });
+    let routes = this.isInRole(await this.props.routesFactory());
+    this.setState({ routes });
   }
 
   componentDidUpdate() {
@@ -42,6 +44,12 @@ class Layout extends Component<Props, State> {
     }
 
     // (this.refs.mainContent as HTMLDivElement).scrollTop = 0;
+  }
+
+  isInRole(routes: RouteDefinition[]): RouteDefinition[] {
+    return routes.filter(rote => {
+      return isAuthorized(rote.role);
+    });
   }
   getBrandText = () => {
     const { routes } = this.state;

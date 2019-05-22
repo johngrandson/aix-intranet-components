@@ -3772,6 +3772,7 @@ var Popper = function () {
 Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
 Popper.placements = placements;
 Popper.Defaults = Defaults;
+//# sourceMappingURL=popper.js.map
 
 var key = '__global_unique_id__';
 
@@ -9943,6 +9944,7 @@ var Footer = /** @class */ (function (_super) {
     };
     return Footer;
 }(React.Component));
+//# sourceMappingURL=AdminFooter.js.map
 
 var _global = createCommonjsModule(function (module) {
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -15078,7 +15080,7 @@ function isSlowBuffer$1 (obj) {
   return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isFastBuffer(obj.slice(0, 0))
 }
 
-var require$$0 = /*#__PURE__*/Object.freeze({
+var bufferEs6 = /*#__PURE__*/Object.freeze({
     INSPECT_MAX_BYTES: INSPECT_MAX_BYTES,
     kMaxLength: _kMaxLength,
     Buffer: Buffer$1,
@@ -15089,7 +15091,7 @@ var require$$0 = /*#__PURE__*/Object.freeze({
 var safeBuffer = createCommonjsModule(function (module, exports) {
 /* eslint-disable node/no-deprecated-api */
 
-var Buffer = require$$0.Buffer;
+var Buffer = bufferEs6.Buffer;
 
 // alternative to using Object.keys for old browsers
 function copyProps (src, dst) {
@@ -15098,10 +15100,10 @@ function copyProps (src, dst) {
   }
 }
 if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow) {
-  module.exports = require$$0;
+  module.exports = bufferEs6;
 } else {
   // Copy properties from require('buffer')
-  copyProps(require$$0, exports);
+  copyProps(bufferEs6, exports);
   exports.Buffer = SafeBuffer;
 }
 
@@ -15147,7 +15149,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
   if (typeof size !== 'number') {
     throw new TypeError('Argument must be a number')
   }
-  return require$$0.SlowBuffer(size)
+  return bufferEs6.SlowBuffer(size)
 };
 });
 var safeBuffer_1 = safeBuffer.Buffer;
@@ -18361,8 +18363,8 @@ DataStream.prototype.end = function end(data) {
 
 var dataStream = DataStream;
 
-var Buffer$3 = require$$0.Buffer; // browserify
-var SlowBuffer$1 = require$$0.SlowBuffer;
+var Buffer$3 = bufferEs6.Buffer; // browserify
+var SlowBuffer$1 = bufferEs6.SlowBuffer;
 
 var bufferEqualConstantTime = bufferEq;
 
@@ -18856,7 +18858,7 @@ var jwa = function jwa(algorithm) {
 };
 
 /*global module*/
-var Buffer$6 = require$$0.Buffer;
+var Buffer$6 = bufferEs6.Buffer;
 
 var tostring = function toString(obj) {
   if (typeof obj === 'string')
@@ -23055,6 +23057,7 @@ var AdminNavbar = /** @class */ (function (_super) {
     };
     return AdminNavbar;
 }(React.Component));
+//# sourceMappingURL=AdminNavbar.js.map
 
 var Sidebar = /** @class */ (function (_super) {
     __extends(Sidebar, _super);
@@ -23160,6 +23163,7 @@ var Sidebar = /** @class */ (function (_super) {
     };
     return Sidebar;
 }(React.Component));
+//# sourceMappingURL=Sidebar.js.map
 
 var UserHeader = /** @class */ (function (_super) {
     __extends(UserHeader, _super);
@@ -23179,6 +23183,20 @@ var UserHeader = /** @class */ (function (_super) {
     };
     return UserHeader;
 }(React.Component));
+//# sourceMappingURL=UserHeader.js.map
+
+var getUser = function () {
+    var payload = jsonwebtoken_1(localStorage.getItem('token') || '')
+        || { user: {} };
+    return payload.user;
+};
+var isAuthorized = function (systemRole) {
+    var user = getUser();
+    return user.roles && !!user.roles.find(function (role) { return systemRole === role; });
+};
+//# sourceMappingURL=autorized.js.map
+
+//# sourceMappingURL=index.js.map
 
 var Layout = /** @class */ (function (_super) {
     __extends(Layout, _super);
@@ -23198,16 +23216,15 @@ var Layout = /** @class */ (function (_super) {
     }
     Layout.prototype.componentDidMount = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var _a, _b;
-            return __generator(this, function (_c) {
-                switch (_c.label) {
+            var routes, _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
                     case 0:
-                        _a = this.setState;
-                        _b = {};
+                        _a = this.isInRole;
                         return [4 /*yield*/, this.props.routesFactory()];
                     case 1:
-                        _a.apply(this, [(_b.routes = _c.sent(),
-                                _b)]);
+                        routes = _a.apply(this, [_b.sent()]);
+                        this.setState({ routes: routes });
                         return [2 /*return*/];
                 }
             });
@@ -23219,6 +23236,11 @@ var Layout = /** @class */ (function (_super) {
             document.scrollingElement.scrollTop = 0;
         }
         // (this.refs.mainContent as HTMLDivElement).scrollTop = 0;
+    };
+    Layout.prototype.isInRole = function (routes) {
+        return routes.filter(function (rote) {
+            return isAuthorized(rote.role);
+        });
     };
     Layout.prototype.render = function () {
         return (React.createElement(React.Fragment, null,
@@ -23235,6 +23257,23 @@ var Layout = /** @class */ (function (_super) {
                     React.createElement(Footer, null)))));
     };
     return Layout;
+}(React.Component));
+//# sourceMappingURL=Layout.js.map
+
+var Authorized = /** @class */ (function (_super) {
+    __extends(Authorized, _super);
+    function Authorized() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Authorized.prototype.render = function () {
+        if (isAuthorized(this.props.role)) {
+            return this.props.children;
+        }
+        else {
+            return false;
+        }
+    };
+    return Authorized;
 }(React.Component));
 
 function styleInject(css, ref) {
@@ -23275,6 +23314,7 @@ var Container$1 = (function (props) { return (React.createElement(Container, { f
                     React.createElement(CardHeader, null,
                         React.createElement("h3", { className: "mb-0" }, props.title)),
                 React.createElement(CardBody, null, props.children)))))); });
+//# sourceMappingURL=Container.js.map
 
 var Pagination$1 = /** @class */ (function (_super) {
     __extends(Pagination$$1, _super);
@@ -23455,12 +23495,18 @@ var Pagination$1 = /** @class */ (function (_super) {
     };
     return Pagination$$1;
 }(React.Component));
+//# sourceMappingURL=Pagination.js.map
+
+//# sourceMappingURL=index.js.map
 
 exports.Container = Container$1;
 exports.Footer = Footer;
 exports.AdminNavbar = AdminNavbar;
 exports.Layout = Layout;
 exports.Sidebar = Sidebar;
+exports.Authorized = Authorized;
 exports.UserHeader = UserHeader;
 exports.Pagination = Pagination$1;
+exports.isAuthorized = isAuthorized;
+exports.getUser = getUser;
 //# sourceMappingURL=index.js.map
