@@ -8,6 +8,7 @@ export interface PaginationEventOptions {
 }
 
 interface Props {
+  reset(): void;
   totalItems: number;
   itemsPerPage: number;
   useFirstLast: boolean;
@@ -23,6 +24,12 @@ class Pagination extends Component<Props> {
   state = {
     activePage: 1,
   };
+
+  async reset() {
+    await this.setState({
+      activePage: 1,
+    });
+  }
 
   buildPaginationItems(numberOfPages: number) {
     const paginationItems = [];
