@@ -4,12 +4,11 @@ export interface PaginationEventOptions {
     newPage: number;
 }
 interface Props {
-    currentPage: number;
+    currentPage?: number;
     totalItems: number;
     itemsPerPage: number;
     useFirstLast: boolean;
     usePrevNext: boolean;
-    onNewPage(options: PaginationEventOptions): void;
     onFirstClick(options: PaginationEventOptions): void;
     onPrevClick(options: PaginationEventOptions): void;
     onItemClick(options: PaginationEventOptions): void;
@@ -20,8 +19,7 @@ declare class Pagination extends Component<Props> {
     state: {
         activePage: number;
     };
-    componentWillReceiveProps(props: Props): Promise<void>;
-    setNewPage(currentPage: number): Promise<void>;
+    componentWillReceiveProps(props: Props): void;
     buildPaginationItems(numberOfPages: number): JSX.Element[];
     onFirstClick(): Promise<void>;
     onPrevClick(): Promise<void>;

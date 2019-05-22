@@ -22,7 +22,7 @@ interface State {
   routes: RouteDefinition[];
 }
 
-class Layout extends Component<Props, State> {
+class AdminLayout extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = { routes: [] };
@@ -85,4 +85,4 @@ class Layout extends Component<Props, State> {
   }
 }
 
-export default Layout;
+export default AdminLayout;

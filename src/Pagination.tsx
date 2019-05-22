@@ -8,12 +8,11 @@ export interface PaginationEventOptions {
 }
 
 interface Props {
-  currentPage: number;
+  currentPage?: number;
   totalItems: number;
   itemsPerPage: number;
   useFirstLast: boolean;
   usePrevNext: boolean;
-  onNewPage(options: PaginationEventOptions): void;
   onFirstClick(options: PaginationEventOptions): void;
   onPrevClick(options: PaginationEventOptions): void;
   onItemClick(options: PaginationEventOptions): void;
@@ -22,31 +21,19 @@ interface Props {
 }
 
 class Pagination extends Component<Props> {
-
   state = {
     activePage: 1,
   };
 
-  async componentWillReceiveProps(props: Props){
-    await this.setNewPage(props.currentPage);
-    props.onNewPage({
-      currentPage: this.state.activePage,
-      newPage: props.currentPage,
-    });
-  }
+  componentWillReceiveProps(props: Props){
+    const { currentPage } = props;
+    const { activePage } = this.state;
 
-  async setNewPage(currentPage: number) {
-
-    const pages: PaginationEventOptions = {
-      currentPage: this.state.activePage,
-      newPage: currentPage,
-    };
-
-    await this.setState({
-      activePage: currentPage,
-    });
-
-    this.props.onNewPage(pages);
+    if (activePage !== currentPage) {
+      this.setState({
+        activePage: currentPage,
+      });
+    }
   }
 
   buildPaginationItems(numberOfPages: number) {
