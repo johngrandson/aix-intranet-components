@@ -101,11 +101,13 @@ class Sidebar extends Component<Props> {
           {/* Brand */}
           {logo ? (
             <NavbarBrand className="pt-0" {...navbarBrandProps}>
-              <img
-                alt={logo.imgAlt}
-                className="navbar-brand-img"
-                src={logo.imgSrc}
-              />
+              <a href="/">
+                <img
+                  alt={logo.imgAlt}
+                  className="navbar-brand-img"
+                  src={logo.imgSrc}
+                />
+              </a>
             </NavbarBrand>
           ) : null}
           {/* User */}
