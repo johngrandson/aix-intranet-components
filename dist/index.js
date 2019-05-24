@@ -8999,49 +8999,12 @@ var propTypes$R = {
   className: PropTypes.string,
   cssModule: PropTypes.object
 };
-var defaultProps$P = {
-  tag: 'div'
-};
-
-var InputGroup = function InputGroup(props) {
-  var className = props.className,
-      cssModule = props.cssModule,
-      Tag = props.tag,
-      size = props.size,
-      attributes = _objectWithoutPropertiesLoose(props, ["className", "cssModule", "tag", "size"]);
-
-  var classes = mapToCssModules(classnames(className, 'input-group', size ? "input-group-" + size : null), cssModule);
-  return React__default.createElement(Tag, _extends({}, attributes, {
-    className: classes
-  }));
-};
-
-InputGroup.propTypes = propTypes$R;
-InputGroup.defaultProps = defaultProps$P;
 
 var propTypes$S = {
   tag: tagPropType,
   className: PropTypes.string,
   cssModule: PropTypes.object
 };
-var defaultProps$Q = {
-  tag: 'span'
-};
-
-var InputGroupText = function InputGroupText(props) {
-  var className = props.className,
-      cssModule = props.cssModule,
-      Tag = props.tag,
-      attributes = _objectWithoutPropertiesLoose(props, ["className", "cssModule", "tag"]);
-
-  var classes = mapToCssModules(classnames(className, 'input-group-text'), cssModule);
-  return React__default.createElement(Tag, _extends({}, attributes, {
-    className: classes
-  }));
-};
-
-InputGroupText.propTypes = propTypes$S;
-InputGroupText.defaultProps = defaultProps$Q;
 
 var propTypes$T = {
   tag: tagPropType,
@@ -9050,36 +9013,6 @@ var propTypes$T = {
   className: PropTypes.string,
   cssModule: PropTypes.object
 };
-var defaultProps$R = {
-  tag: 'div'
-};
-
-var InputGroupAddon = function InputGroupAddon(props) {
-  var className = props.className,
-      cssModule = props.cssModule,
-      Tag = props.tag,
-      addonType = props.addonType,
-      children = props.children,
-      attributes = _objectWithoutPropertiesLoose(props, ["className", "cssModule", "tag", "addonType", "children"]);
-
-  var classes = mapToCssModules(classnames(className, 'input-group-' + addonType), cssModule); // Convenience to assist with transition
-
-  if (typeof children === 'string') {
-    return React__default.createElement(Tag, _extends({}, attributes, {
-      className: classes
-    }), React__default.createElement(InputGroupText, {
-      children: children
-    }));
-  }
-
-  return React__default.createElement(Tag, _extends({}, attributes, {
-    className: classes,
-    children: children
-  }));
-};
-
-InputGroupAddon.propTypes = propTypes$T;
-InputGroupAddon.defaultProps = defaultProps$R;
 
 var propTypes$U = {
   addonType: PropTypes.oneOf(['prepend', 'append']).isRequired,
@@ -22984,45 +22917,63 @@ var jsonwebtoken = {
 };
 var jsonwebtoken_1 = jsonwebtoken.decode;
 
-var AdminNavbar = /** @class */ (function (_super) {
-    __extends(AdminNavbar, _super);
-    function AdminNavbar(props) {
+function getUser() {
+    var token = localStorage.getItem("token");
+    if (token) {
+        try {
+            var payload = jsonwebtoken_1(token);
+            if (payload) {
+                return payload.user;
+            }
+        }
+        catch (_a) { }
+    }
+    return null;
+}
+function hasRole(systemRole) {
+    var user = getUser();
+    if (user) {
+        return user.roles && !!user.roles.find(function (role) { return systemRole === role; });
+    }
+    return false;
+}
+function logout() {
+    localStorage.removeItem("token");
+}
+
+var UserMenu = /** @class */ (function (_super) {
+    __extends(UserMenu, _super);
+    function UserMenu(props) {
         var _this = _super.call(this, props) || this;
-        _this.state = {
-            isLoadingUserData: true
-        };
+        _this.state = { isLoadingData: true };
+        _this.logout = _this.logout.bind(_this);
         return _this;
     }
-    AdminNavbar.prototype.componentDidMount = function () {
+    UserMenu.prototype.logout = function () {
+        logout();
+        location.href = '/';
+    };
+    UserMenu.prototype.componentDidMount = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var token, decodedToken;
+            var user;
             return __generator(this, function (_a) {
-                token = localStorage.getItem("token");
-                if (token) {
-                    try {
-                        decodedToken = jsonwebtoken_1(token);
-                        if (decodedToken) {
-                            this.setState({
-                                user: decodedToken['user']
-                            });
-                        }
-                    }
-                    catch (_b) { }
+                user = getUser();
+                if (user) {
+                    this.setState({
+                        user: user
+                    });
                 }
                 this.setState({
-                    isLoadingUserData: false
+                    isLoadingData: false
                 });
                 return [2 /*return*/];
             });
         });
     };
-    AdminNavbar.prototype.logout = function () {
-        localStorage.removeItem("token");
-        window.location.href = '/';
-    };
-    AdminNavbar.prototype.renderUserMenu = function () {
-        var _a = this.state, isLoadingUserData = _a.isLoadingUserData, user = _a.user;
-        if (isLoadingUserData) {
+    UserMenu.prototype.render = function () {
+        var _a = this.state, isLoadingData = _a.isLoadingData, user = _a.user;
+        var showName = this.props.showName;
+        if (isLoadingData) {
             return React.createElement(Spinner, { color: "light", size: "sm" });
         }
         if (user) {
@@ -23030,8 +22981,9 @@ var AdminNavbar = /** @class */ (function (_super) {
                 React.createElement(DropdownToggle, { className: "pr-0", nav: true },
                     React.createElement(Media, { className: "align-items-center" },
                         React.createElement(Avatar$1, { round: true, name: user.name, size: "36" }),
-                        React.createElement(Media, { className: "ml-2 d-none d-lg-block" },
-                            React.createElement("span", { className: "mb-0 text-sm font-weight-bold" }, user.name)))),
+                        showName &&
+                            React.createElement(Media, { className: "ml-2 d-none d-lg-block" },
+                                React.createElement("span", { className: "mb-0 text-sm font-weight-bold" }, user.name)))),
                 React.createElement(DropdownMenu, { className: "dropdown-menu-arrow", right: true },
                     React.createElement(DropdownItem, { to: "/admin/user-profile", disabled: true },
                         React.createElement("i", { className: "ni ni-single-02" }),
@@ -23046,12 +22998,21 @@ var AdminNavbar = /** @class */ (function (_super) {
         }
         return React.createElement(React.Fragment, null);
     };
+    return UserMenu;
+}(React.Component));
+
+var AdminNavbar = /** @class */ (function (_super) {
+    __extends(AdminNavbar, _super);
+    function AdminNavbar(props) {
+        return _super.call(this, props) || this;
+    }
     AdminNavbar.prototype.render = function () {
         return (React.createElement(React.Fragment, null,
             React.createElement(Navbar, { className: "navbar-top navbar-dark", expand: "md", id: "navbar-main" },
                 React.createElement(Container, { fluid: true },
                     React.createElement("h1", { className: "text-white", style: { fontWeight: 300 } }, this.props.brandText),
-                    React.createElement(Nav, { className: "align-items-center d-none d-md-flex", navbar: true }, this.renderUserMenu())))));
+                    React.createElement(Nav, { className: "align-items-center d-none d-md-flex", navbar: true },
+                        React.createElement(UserMenu, { showName: true }))))));
     };
     return AdminNavbar;
 }(React.Component));
@@ -23107,7 +23068,9 @@ var Sidebar = /** @class */ (function (_super) {
         return (React.createElement(Navbar, { className: "navbar-vertical fixed-left purple-bg", expand: "md", id: "sidenav-main" },
             React.createElement(Container, { fluid: true },
                 React.createElement("button", { className: "navbar-toggler", type: "button", onClick: this.toggleCollapse },
-                    React.createElement("span", { className: "navbar-toggler-icon" })),
+                    React.createElement("span", { className: "navbar-toggler-icon" },
+                        React.createElement("svg", { style: { width: '24px', height: '24px', marginTop: '3px' }, viewBox: "0 0 24 24" },
+                            React.createElement("path", { fill: "#FFF", d: "M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" })))),
                 logo ? (React.createElement(NavbarBrand, __assign({ className: "pt-0" }, navbarBrandProps),
                     React.createElement("a", { href: "/" },
                         React.createElement("img", { alt: logo.imgAlt, className: "navbar-brand-img", src: logo.imgSrc })))) : null,
@@ -23120,57 +23083,21 @@ var Sidebar = /** @class */ (function (_super) {
                             React.createElement(DropdownItem, null, "Another action"),
                             React.createElement(DropdownItem, { divider: true }),
                             React.createElement(DropdownItem, null, "Something else here"))),
-                    React.createElement(UncontrolledDropdown, { nav: true },
-                        React.createElement(DropdownToggle, { nav: true },
-                            React.createElement(Media, { className: "align-items-center" },
-                                React.createElement("span", { className: "avatar avatar-sm rounded-circle" },
-                                    React.createElement("img", { alt: "...", src: "./assets/img/theme/team-1-800x800.jpg" })))),
-                        React.createElement(DropdownMenu, { className: "dropdown-menu-arrow", right: true },
-                            React.createElement(DropdownItem, { className: "noti-title", header: true, tag: "div" },
-                                React.createElement("h6", { className: "text-overflow m-0" }, "Welcome!")),
-                            React.createElement(DropdownItem, { to: "/admin/user-profile" },
-                                React.createElement("i", { className: "ni ni-single-02" }),
-                                React.createElement("span", null, "My profile")),
-                            React.createElement(DropdownItem, { to: "/admin/user-profile" },
-                                React.createElement("i", { className: "ni ni-settings-gear-65" }),
-                                React.createElement("span", null, "Settings")),
-                            React.createElement(DropdownItem, { to: "/admin/user-profile" },
-                                React.createElement("i", { className: "ni ni-calendar-grid-58" }),
-                                React.createElement("span", null, "Activity")),
-                            React.createElement(DropdownItem, { to: "/admin/user-profile" },
-                                React.createElement("i", { className: "ni ni-support-16" }),
-                                React.createElement("span", null, "Support")),
-                            React.createElement(DropdownItem, { divider: true }),
-                            React.createElement(DropdownItem, { href: "#pablo", onClick: function (e) { return e.preventDefault(); } },
-                                React.createElement("i", { className: "ni ni-user-run" }),
-                                React.createElement("span", null, "Logout"))))),
+                    React.createElement(UserMenu, { showName: false })),
                 React.createElement(Collapse, { navbar: true, isOpen: this.state.collapseOpen },
                     React.createElement("div", { className: "navbar-collapse-header d-md-none" },
                         React.createElement(Row, null,
+                            logo ? (React.createElement(Col, { className: "collapse-brand", xs: "6" },
+                                React.createElement("a", { href: "/" },
+                                    React.createElement("img", { alt: logo.imgAlt, src: logo.imgSrc })))) : null,
                             React.createElement(Col, { className: "collapse-close", xs: "6" },
                                 React.createElement("button", { className: "navbar-toggler", type: "button", onClick: this.toggleCollapse },
                                     React.createElement("span", null),
                                     React.createElement("span", null))))),
-                    React.createElement(Form, { className: "mt-4 mb-3 d-md-none" },
-                        React.createElement(InputGroup, { className: "input-group-rounded input-group-merge" },
-                            React.createElement(Input, { "aria-label": "Search", className: "form-control-rounded form-control-prepended", placeholder: "Search", type: "search" }),
-                            React.createElement(InputGroupAddon, { addonType: "prepend" },
-                                React.createElement(InputGroupText, null,
-                                    React.createElement("span", { className: "fa fa-search" }))))),
                     React.createElement(Nav, { navbar: true }, this.createLinks(routes))))));
     };
     return Sidebar;
 }(React.Component));
-
-var getUser = function () {
-    var payload = jsonwebtoken_1(localStorage.getItem('token') || '')
-        || { user: {} };
-    return payload.user;
-};
-var isAuthorized = function (systemRole) {
-    var user = getUser();
-    return user.roles && !!user.roles.find(function (role) { return systemRole === role; });
-};
 
 var Authorized = /** @class */ (function (_super) {
     __extends(Authorized, _super);
@@ -23178,7 +23105,7 @@ var Authorized = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Authorized.prototype.render = function () {
-        if (isAuthorized(this.props.role)) {
+        if (hasRole(this.props.role)) {
             return this.props.children;
         }
         else {
@@ -23248,7 +23175,7 @@ var AdminLayout = /** @class */ (function (_super) {
     };
     AdminLayout.prototype.isInRole = function (routes) {
         return routes.filter(function (rote) {
-            return isAuthorized(rote.role);
+            return hasRole(rote.role);
         });
     };
     AdminLayout.prototype.render = function () {
@@ -23437,6 +23364,6 @@ exports.Authorized = Authorized;
 exports.UserHeader = UserHeader;
 exports.AdminLayout = AdminLayout;
 exports.Pagination = Pagination$1;
-exports.isAuthorized = isAuthorized;
+exports.hasRole = hasRole;
 exports.getUser = getUser;
 //# sourceMappingURL=index.js.map

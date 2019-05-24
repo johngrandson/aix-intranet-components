@@ -7,5 +7,5 @@ import './assets/scss/argon-dashboard-react.scss';
 import AdminLayout from "./AdminLayout";
 import Container from "./Container";
 import Pagination, { PaginationEventOptions } from "./Pagination";
-export { isAuthorized, getUser } from "./services/";
+export { hasRole, getUser } from "./services/";
 export { Container, Footer, AdminNavbar, Sidebar, Authorized, UserHeader, AdminLayout, PaginationEventOptions, Pagination };

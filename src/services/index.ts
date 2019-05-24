@@ -1,1 +1,1 @@
-export { getUser, IPayload, isAuthorized } from './autorized';
+export { getUser, IPayload, hasRole } from './user';

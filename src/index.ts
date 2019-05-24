@@ -11,10 +11,10 @@ import Pagination, { PaginationEventOptions } from "./Pagination";
 
 // services
 export {
-  isAuthorized,
+  hasRole,
   getUser
 }
-from "./services/";
+  from "./services/";
 
 // components
 export {

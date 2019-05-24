@@ -7,8 +7,7 @@ import AdminNavbar from "./AdminNavbar";
 import AdminFooter from "./AdminFooter";
 import Sidebar from "./Sidebar";
 import UserHeader from "./UserHeader";
-import { isAuthorized } from "./services";
-
+import { hasRole } from "./services";
 
 interface RouteDefinition {
   path: string;
@@ -48,7 +47,7 @@ class AdminLayout extends Component<Props, State> {
 
   isInRole(routes: RouteDefinition[]): RouteDefinition[] {
     return routes.filter(rote => {
-      return isAuthorized(rote.role);
+      return hasRole(rote.role);
     });
   }
   getBrandText = () => {
