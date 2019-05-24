@@ -52,6 +52,7 @@
 
 // Bootstrap (4.1.3) components
 
+@import "bootstrap/vendor/rfs";
 @import "bootstrap/root";
 @import "bootstrap/reboot";
 @import "bootstrap/type";
@@ -84,6 +85,8 @@
 @import "bootstrap/carousel";
 @import "bootstrap/utilities";
 @import "bootstrap/print";
+@import "bootstrap/spinners";
+@import "bootstrap/toasts";
 
 // Argon utilities and components
 
