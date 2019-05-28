@@ -14,7 +14,6 @@ class AdminNavbar extends Component<Props> {
 
 
   render() {
-    console.log('this.props.brandText', this.props.brandText)
     return (
       <>
         <Navbar className="navbar-top navbar-dark" expand="md" id="navbar-main">

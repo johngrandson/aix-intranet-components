@@ -3772,7 +3772,6 @@ var Popper = function () {
 Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
 Popper.placements = placements;
 Popper.Defaults = Defaults;
-//# sourceMappingURL=popper.js.map
 
 var key = '__global_unique_id__';
 
@@ -9877,7 +9876,6 @@ var Footer = /** @class */ (function (_super) {
     };
     return Footer;
 }(React.Component));
-//# sourceMappingURL=AdminFooter.js.map
 
 var _global = createCommonjsModule(function (module) {
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -9904,7 +9902,7 @@ var store = _global[SHARED] || (_global[SHARED] = {});
   return store[key] || (store[key] = value !== undefined ? value : {});
 })('versions', []).push({
   version: _core.version,
-  mode: 'global',
+  mode: _library ? 'pure' : 'global',
   copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
 });
 });
@@ -10001,7 +9999,7 @@ var _objectDp = {
 
 var defineProperty$2 = _objectDp.f;
 var _wksDefine = function (name) {
-  var $Symbol = _core.Symbol || (_core.Symbol = _global.Symbol || {});
+  var $Symbol = _core.Symbol || (_core.Symbol = _library ? {} : _global.Symbol || {});
   if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty$2($Symbol, name, { value: _wksExt.f(name) });
 };
 
@@ -22942,7 +22940,6 @@ function hasRole(systemRole) {
 function logout() {
     localStorage.removeItem("token");
 }
-//# sourceMappingURL=user.js.map
 
 var UserMenu = /** @class */ (function (_super) {
     __extends(UserMenu, _super);
@@ -23003,7 +23000,6 @@ var UserMenu = /** @class */ (function (_super) {
     };
     return UserMenu;
 }(React.Component));
-//# sourceMappingURL=UserMenu.js.map
 
 var AdminNavbar = /** @class */ (function (_super) {
     __extends(AdminNavbar, _super);
@@ -23011,7 +23007,6 @@ var AdminNavbar = /** @class */ (function (_super) {
         return _super.call(this, props) || this;
     }
     AdminNavbar.prototype.render = function () {
-        console.log('this.props.brandText', this.props.brandText);
         return (React.createElement(React.Fragment, null,
             React.createElement(Navbar, { className: "navbar-top navbar-dark", expand: "md", id: "navbar-main" },
                 React.createElement(Container, { fluid: true },
@@ -23021,7 +23016,6 @@ var AdminNavbar = /** @class */ (function (_super) {
     };
     return AdminNavbar;
 }(React.Component));
-//# sourceMappingURL=AdminNavbar.js.map
 
 var Sidebar = /** @class */ (function (_super) {
     __extends(Sidebar, _super);
@@ -23109,9 +23103,6 @@ var Sidebar = /** @class */ (function (_super) {
     };
     return Sidebar;
 }(React.Component));
-//# sourceMappingURL=Sidebar.js.map
-
-//# sourceMappingURL=index.js.map
 
 var Authorized = /** @class */ (function (_super) {
     __extends(Authorized, _super);
@@ -23128,7 +23119,6 @@ var Authorized = /** @class */ (function (_super) {
     };
     return Authorized;
 }(React.Component));
-//# sourceMappingURL=Authorized.js.map
 
 var UserHeader = /** @class */ (function (_super) {
     __extends(UserHeader, _super);
@@ -23148,7 +23138,6 @@ var UserHeader = /** @class */ (function (_super) {
     };
     return UserHeader;
 }(React.Component));
-//# sourceMappingURL=UserHeader.js.map
 
 var AdminLayout = /** @class */ (function (_super) {
     __extends(AdminLayout, _super);
@@ -23210,7 +23199,6 @@ var AdminLayout = /** @class */ (function (_super) {
     };
     return AdminLayout;
 }(React.Component));
-//# sourceMappingURL=AdminLayout.js.map
 
 var Container$1 = (function (props) { return (React.createElement(Container, { fluid: true, className: "mb-4" },
     React.createElement(Row, null,
@@ -23220,7 +23208,6 @@ var Container$1 = (function (props) { return (React.createElement(Container, { f
                     React.createElement(CardHeader, null,
                         React.createElement("h3", { className: "mb-0" }, props.title)),
                 React.createElement(CardBody, null, props.children)))))); });
-//# sourceMappingURL=Container.js.map
 
 var Pagination$1 = /** @class */ (function (_super) {
     __extends(Pagination$$1, _super);
@@ -23373,9 +23360,6 @@ var Pagination$1 = /** @class */ (function (_super) {
     };
     return Pagination$$1;
 }(React.Component));
-//# sourceMappingURL=Pagination.js.map
-
-//# sourceMappingURL=index.js.map
 
 exports.Container = Container$1;
 exports.Footer = Footer;
