@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Component } from "react";
-
+import './styles.css';
 // reactstrap components
 import {
   Collapse,
@@ -50,8 +50,20 @@ class Sidebar extends Component<Props> {
   };
   // creates the links that appear in the left menu / Sidebar
   createLinks = (routes: any[]) => {
-    return routes.map((prop, key) => {
-      return (
+    return routes.map((prop, key) => (
+      prop.name === 'Home' ?
+        <NavItem key={key}>
+          <a
+            className="nav-link"
+            href={prop.path}
+            onClick={this.closeCollapse}
+          >
+            <i className={prop.icon} />
+            {prop.name}
+          </a>
+          <div className="divider" />
+        </NavItem>
+        :
         <NavItem key={key}>
           <a
             className="nav-link"
@@ -62,8 +74,7 @@ class Sidebar extends Component<Props> {
             {prop.name}
           </a>
         </NavItem>
-      );
-    });
+    ));
   };
   render() {
     const { routes, logo } = this.props;

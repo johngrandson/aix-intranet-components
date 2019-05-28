@@ -7,7 +7,7 @@ import { Row, Col } from "reactstrap";
 class Footer extends Component {
   render() {
     return (
-      <footer className="footer">
+      <footer className="footer mt-auto py-3">
         <Row className="align-items-center justify-content-xl-between">
           <Col xl="6">
             <div className="copyright text-center text-xl-left text-muted">

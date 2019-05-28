@@ -6,3 +6,10 @@
   border: 2px solid #000;
   font-size: 2em;
 }
+
+.divider {
+  background: -webkit-linear-gradient(left, #101637, #acacac, #141a3f);
+  height: 1px;
+  margin: 11px;
+  opacity: 1.3;
+}

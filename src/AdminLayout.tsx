@@ -57,7 +57,8 @@ class AdminLayout extends Component<Props, State> {
       if (
         window.location.pathname.indexOf(routes[i].path) !== -1
       ) {
-        return routes[i].name;
+
+        return routes[i].name
       }
     }
 
