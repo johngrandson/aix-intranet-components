@@ -1,6 +1,5 @@
 import { Component } from "react";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import './styles.css';
 export interface RouteDefinition {
     appendSeparator?: boolean;
     path: string;
