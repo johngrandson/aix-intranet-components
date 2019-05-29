@@ -7,3 +7,14 @@
 @import "../core/navbars/navbar-search";
 @import "../core/navbars/navbar-dropdown";
 @import "../core/navbars/navbar-collapse";
+
+.navbar-vertical {
+  .nav-item {
+    .divider {
+      background: -webkit-linear-gradient(left, #101637, #acacac, #141a3f);
+      height: 1px;
+      margin: 11px;
+      opacity: 1.3;
+    }
+  }
+}
