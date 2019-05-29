@@ -3772,6 +3772,7 @@ var Popper = function () {
 Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
 Popper.placements = placements;
 Popper.Defaults = Defaults;
+//# sourceMappingURL=popper.js.map
 
 var key = '__global_unique_id__';
 
@@ -8734,18 +8735,98 @@ var propTypes$H = {
   charCode: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   close: PropTypes.object
 };
+var defaultProps$E = {
+  tag: 'h5',
+  wrapTag: 'div',
+  closeAriaLabel: 'Close',
+  charCode: 215
+};
+
+var ModalHeader = function ModalHeader(props) {
+  var closeButton;
+
+  var className = props.className,
+      cssModule = props.cssModule,
+      children = props.children,
+      toggle = props.toggle,
+      Tag = props.tag,
+      WrapTag = props.wrapTag,
+      closeAriaLabel = props.closeAriaLabel,
+      charCode = props.charCode,
+      close = props.close,
+      attributes = _objectWithoutPropertiesLoose(props, ["className", "cssModule", "children", "toggle", "tag", "wrapTag", "closeAriaLabel", "charCode", "close"]);
+
+  var classes = mapToCssModules(classnames(className, 'modal-header'), cssModule);
+
+  if (!close && toggle) {
+    var closeIcon = typeof charCode === 'number' ? String.fromCharCode(charCode) : charCode;
+    closeButton = React__default.createElement("button", {
+      type: "button",
+      onClick: toggle,
+      className: mapToCssModules('close', cssModule),
+      "aria-label": closeAriaLabel
+    }, React__default.createElement("span", {
+      "aria-hidden": "true"
+    }, closeIcon));
+  }
+
+  return React__default.createElement(WrapTag, _extends({}, attributes, {
+    className: classes
+  }), React__default.createElement(Tag, {
+    className: mapToCssModules('modal-title', cssModule)
+  }, children), close || closeButton);
+};
+
+ModalHeader.propTypes = propTypes$H;
+ModalHeader.defaultProps = defaultProps$E;
 
 var propTypes$I = {
   tag: tagPropType,
   className: PropTypes.string,
   cssModule: PropTypes.object
 };
+var defaultProps$F = {
+  tag: 'div'
+};
+
+var ModalBody = function ModalBody(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = _objectWithoutPropertiesLoose(props, ["className", "cssModule", "tag"]);
+
+  var classes = mapToCssModules(classnames(className, 'modal-body'), cssModule);
+  return React__default.createElement(Tag, _extends({}, attributes, {
+    className: classes
+  }));
+};
+
+ModalBody.propTypes = propTypes$I;
+ModalBody.defaultProps = defaultProps$F;
 
 var propTypes$J = {
   tag: tagPropType,
   className: PropTypes.string,
   cssModule: PropTypes.object
 };
+var defaultProps$G = {
+  tag: 'div'
+};
+
+var ModalFooter = function ModalFooter(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = _objectWithoutPropertiesLoose(props, ["className", "cssModule", "tag"]);
+
+  var classes = mapToCssModules(classnames(className, 'modal-footer'), cssModule);
+  return React__default.createElement(Tag, _extends({}, attributes, {
+    className: classes
+  }));
+};
+
+ModalFooter.propTypes = propTypes$J;
+ModalFooter.defaultProps = defaultProps$G;
 
 var defaultProps$H = {
   placement: 'top',
@@ -9876,6 +9957,7 @@ var Footer = /** @class */ (function (_super) {
     };
     return Footer;
 }(React.Component));
+//# sourceMappingURL=AdminFooter.js.map
 
 var _global = createCommonjsModule(function (module) {
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -15011,7 +15093,7 @@ function isSlowBuffer$1 (obj) {
   return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isFastBuffer(obj.slice(0, 0))
 }
 
-var require$$0 = /*#__PURE__*/Object.freeze({
+var bufferEs6 = /*#__PURE__*/Object.freeze({
     INSPECT_MAX_BYTES: INSPECT_MAX_BYTES,
     kMaxLength: _kMaxLength,
     Buffer: Buffer$1,
@@ -15022,7 +15104,7 @@ var require$$0 = /*#__PURE__*/Object.freeze({
 var safeBuffer = createCommonjsModule(function (module, exports) {
 /* eslint-disable node/no-deprecated-api */
 
-var Buffer = require$$0.Buffer;
+var Buffer = bufferEs6.Buffer;
 
 // alternative to using Object.keys for old browsers
 function copyProps (src, dst) {
@@ -15031,10 +15113,10 @@ function copyProps (src, dst) {
   }
 }
 if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow) {
-  module.exports = require$$0;
+  module.exports = bufferEs6;
 } else {
   // Copy properties from require('buffer')
-  copyProps(require$$0, exports);
+  copyProps(bufferEs6, exports);
   exports.Buffer = SafeBuffer;
 }
 
@@ -15080,7 +15162,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
   if (typeof size !== 'number') {
     throw new TypeError('Argument must be a number')
   }
-  return require$$0.SlowBuffer(size)
+  return bufferEs6.SlowBuffer(size)
 };
 });
 var safeBuffer_1 = safeBuffer.Buffer;
@@ -18294,8 +18376,8 @@ DataStream.prototype.end = function end(data) {
 
 var dataStream = DataStream;
 
-var Buffer$3 = require$$0.Buffer; // browserify
-var SlowBuffer$1 = require$$0.SlowBuffer;
+var Buffer$3 = bufferEs6.Buffer; // browserify
+var SlowBuffer$1 = bufferEs6.SlowBuffer;
 
 var bufferEqualConstantTime = bufferEq;
 
@@ -18789,7 +18871,7 @@ var jwa = function jwa(algorithm) {
 };
 
 /*global module*/
-var Buffer$6 = require$$0.Buffer;
+var Buffer$6 = bufferEs6.Buffer;
 
 var tostring = function toString(obj) {
   if (typeof obj === 'string')
@@ -22940,6 +23022,7 @@ function hasRole(systemRole) {
 function logout() {
     localStorage.removeItem("token");
 }
+//# sourceMappingURL=user.js.map
 
 var UserMenu = /** @class */ (function (_super) {
     __extends(UserMenu, _super);
@@ -23000,6 +23083,7 @@ var UserMenu = /** @class */ (function (_super) {
     };
     return UserMenu;
 }(React.Component));
+//# sourceMappingURL=UserMenu.js.map
 
 var AdminNavbar = /** @class */ (function (_super) {
     __extends(AdminNavbar, _super);
@@ -23016,6 +23100,7 @@ var AdminNavbar = /** @class */ (function (_super) {
     };
     return AdminNavbar;
 }(React.Component));
+//# sourceMappingURL=AdminNavbar.js.map
 
 var Sidebar = /** @class */ (function (_super) {
     __extends(Sidebar, _super);
@@ -23103,6 +23188,9 @@ var Sidebar = /** @class */ (function (_super) {
     };
     return Sidebar;
 }(React.Component));
+//# sourceMappingURL=Sidebar.js.map
+
+//# sourceMappingURL=index.js.map
 
 var Authorized = /** @class */ (function (_super) {
     __extends(Authorized, _super);
@@ -23119,6 +23207,7 @@ var Authorized = /** @class */ (function (_super) {
     };
     return Authorized;
 }(React.Component));
+//# sourceMappingURL=Authorized.js.map
 
 var UserHeader = /** @class */ (function (_super) {
     __extends(UserHeader, _super);
@@ -23138,6 +23227,7 @@ var UserHeader = /** @class */ (function (_super) {
     };
     return UserHeader;
 }(React.Component));
+//# sourceMappingURL=UserHeader.js.map
 
 var AdminLayout = /** @class */ (function (_super) {
     __extends(AdminLayout, _super);
@@ -23199,6 +23289,7 @@ var AdminLayout = /** @class */ (function (_super) {
     };
     return AdminLayout;
 }(React.Component));
+//# sourceMappingURL=AdminLayout.js.map
 
 var Container$1 = (function (props) { return (React.createElement(Container, { fluid: true, className: "mb-4" },
     React.createElement(Row, null,
@@ -23208,6 +23299,7 @@ var Container$1 = (function (props) { return (React.createElement(Container, { f
                     React.createElement(CardHeader, null,
                         React.createElement("h3", { className: "mb-0" }, props.title)),
                 React.createElement(CardBody, null, props.children)))))); });
+//# sourceMappingURL=Container.js.map
 
 var Pagination$1 = /** @class */ (function (_super) {
     __extends(Pagination$$1, _super);
@@ -23360,6 +23452,60 @@ var Pagination$1 = /** @class */ (function (_super) {
     };
     return Pagination$$1;
 }(React.Component));
+//# sourceMappingURL=Pagination.js.map
+
+var Confirm = /** @class */ (function (_super) {
+    __extends(Confirm, _super);
+    function Confirm(props) {
+        var _this = _super.call(this, props) || this;
+        _this.onConfirm = function (event) {
+            event.stopPropagation();
+            _this.setState({
+                isOpened: false
+            });
+            _this.props.onConfirm();
+        };
+        _this.onButtonClick = function () {
+            if (!_this.state.isOpened) {
+                _this.setState({
+                    isOpened: true
+                });
+            }
+        };
+        _this.onClose = function (event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            _this.setState({
+                isOpened: false
+            });
+            if (_this.props.onClose) {
+                _this.props.onClose();
+            }
+        };
+        _this.state = {
+            isOpened: props.visible
+        };
+        return _this;
+    }
+    Confirm.prototype.render = function () {
+        var customBtn = React.Children.only(this.props.children);
+        var modal = (React.createElement(Modal, { isOpen: this.state.isOpened, onHide: this.onClose, className: this.props.className },
+            React.createElement(ModalHeader, null, this.props.title),
+            React.createElement(ModalBody, null, this.props.body),
+            React.createElement(ModalFooter, null,
+                React.createElement(Button, { color: "secondary", onClick: this.onClose }, this.props.cancelText || "Cancelar"),
+                React.createElement(Button, { color: "primary", onClick: this.onConfirm }, this.props.confirmText))));
+        var content = React.cloneElement(customBtn, {
+            onClick: this.onButtonClick,
+        }, customBtn.props.children, modal);
+        return content;
+    };
+    return Confirm;
+}(React.Component));
+//# sourceMappingURL=Confirm.js.map
+
+//# sourceMappingURL=index.js.map
 
 exports.Container = Container$1;
 exports.Footer = Footer;
@@ -23369,6 +23515,7 @@ exports.Authorized = Authorized;
 exports.UserHeader = UserHeader;
 exports.AdminLayout = AdminLayout;
 exports.Pagination = Pagination$1;
+exports.Confirm = Confirm;
 exports.hasRole = hasRole;
 exports.getUser = getUser;
 //# sourceMappingURL=index.js.map
