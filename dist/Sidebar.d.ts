@@ -1,8 +1,16 @@
 import { Component } from "react";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import './styles.css';
+export interface RouteDefinition {
+    appendSeparator?: boolean;
+    path: string;
+    name: string;
+    icon: IconProp;
+    role?: string;
+}
 interface Props {
     bgColor: string;
-    routes: any[];
+    routes: RouteDefinition[];
     logo: any;
 }
 declare class Sidebar extends Component<Props> {
@@ -13,7 +21,7 @@ declare class Sidebar extends Component<Props> {
     activeRoute: (routeName: string) => "active" | "";
     toggleCollapse: () => void;
     closeCollapse: () => void;
-    createLinks: (routes: any[]) => JSX.Element[];
+    createLinks: (routes: RouteDefinition[]) => JSX.Element[];
     render(): JSX.Element;
 }
 export default Sidebar;

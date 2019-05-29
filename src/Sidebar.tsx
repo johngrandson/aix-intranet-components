@@ -1,13 +1,12 @@
 import * as React from "react";
 import { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+
 import './styles.css';
 // reactstrap components
 import {
   Collapse,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  DropdownToggle,
   NavbarBrand,
   Navbar,
   NavItem,
@@ -18,10 +17,17 @@ import {
 } from "reactstrap";
 import UserMenu from "./UserMenu";
 
+export interface RouteDefinition {
+  appendSeparator?: boolean;
+  path: string;
+  name: string;
+  icon: IconProp;
+  role?: string;
+}
 
 interface Props {
   bgColor: string;
-  routes: any[];
+  routes: RouteDefinition[];
   logo: any
 }
 
@@ -49,31 +55,15 @@ class Sidebar extends Component<Props> {
     });
   };
   // creates the links that appear in the left menu / Sidebar
-  createLinks = (routes: any[]) => {
+  createLinks = (routes: RouteDefinition[]) => {
     return routes.map((prop, key) => (
-      prop.name === 'Home' ?
-        <NavItem key={key}>
-          <a
-            className="nav-link"
-            href={prop.path}
-            onClick={this.closeCollapse}
-          >
-            <i className={prop.icon} />
-            {prop.name}
-          </a>
-          <div className="divider" />
-        </NavItem>
-        :
-        <NavItem key={key}>
-          <a
-            className="nav-link"
-            href={prop.path}
-            onClick={this.closeCollapse}
-          >
-            <i className={prop.icon} />
-            {prop.name}
-          </a>
-        </NavItem>
+      <NavItem key={key}>
+        <a className="nav-link" href={prop.path} onClick={this.closeCollapse} >
+          <FontAwesomeIcon icon={prop.icon} className="mr-2" />
+          {prop.name}
+        </a>
+        {prop.appendSeparator && <div className="divider" />}
+      </NavItem>
     ));
   };
   render() {
@@ -122,21 +112,6 @@ class Sidebar extends Component<Props> {
           ) : null}
           {/* User */}
           <Nav className="align-items-center d-md-none">
-            <UncontrolledDropdown nav>
-              <DropdownToggle nav className="nav-link-icon">
-                <i className="ni ni-bell-55" />
-              </DropdownToggle>
-              <DropdownMenu
-                aria-labelledby="navbar-default_dropdown_1"
-                className="dropdown-menu-arrow"
-                right
-              >
-                <DropdownItem>Action</DropdownItem>
-                <DropdownItem>Another action</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Something else here</DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
             <UserMenu showName={false} />
           </Nav>
           {/* Collapse */}

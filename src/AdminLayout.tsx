@@ -5,16 +5,9 @@ import { Container } from "reactstrap";
 // core components
 import AdminNavbar from "./AdminNavbar";
 import AdminFooter from "./AdminFooter";
-import Sidebar from "./Sidebar";
+import Sidebar, { RouteDefinition } from "./Sidebar";
 import UserHeader from "./UserHeader";
 import { hasRole } from "./services";
-
-interface RouteDefinition {
-  path: string;
-  name: string;
-  icon: string;
-  role: string;
-}
 
 interface Props {
   routesFactory: () => Promise<RouteDefinition[]>;
@@ -46,10 +39,9 @@ class AdminLayout extends Component<Props, State> {
   }
 
   isInRole(routes: RouteDefinition[]): RouteDefinition[] {
-    return routes.filter(rote => {
-      return hasRole(rote.role);
-    });
+    return routes.filter(route => !route.role || hasRole(route.role));
   }
+
   getBrandText = () => {
     const { routes } = this.state;
 

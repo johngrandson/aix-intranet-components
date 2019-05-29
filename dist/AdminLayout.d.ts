@@ -1,10 +1,5 @@
 import { Component } from "react";
-interface RouteDefinition {
-    path: string;
-    name: string;
-    icon: string;
-    role: string;
-}
+import { RouteDefinition } from "./Sidebar";
 interface Props {
     routesFactory: () => Promise<RouteDefinition[]>;
 }
