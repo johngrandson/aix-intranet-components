@@ -4,18 +4,14 @@ import * as React from 'react';
 import { Alert } from 'reactstrap';
 import { PositionsType } from 'toasted-notes/lib/Message';
 
-
-
-
 const options: MessageOptionalOptions = {
   duration: 2000,
   position: 'top-right',
 }
 
-
 class Toaster {
 
-  show(message: string, color: string = "light", position: PositionsType = 'top-right', ) {
+  show(message: string, color: string = "light", position: PositionsType = 'bottom-left', ) {
     return toaster.notify(({ }) => (
       <Alert color={color}>
         {message}
