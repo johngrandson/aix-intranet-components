@@ -26944,7 +26944,7 @@ var Toaster$1 = /** @class */ (function () {
     }
     Toaster.prototype.show = function (message, color, position) {
         if (color === void 0) { color = "light"; }
-        if (position === void 0) { position = 'top-right'; }
+        if (position === void 0) { position = 'bottom-left'; }
         return toaster.notify(function (_a) { return (React.createElement(Alert, { color: color }, message)); }, __assign({}, options, { position: position }));
     };
     Toaster.prototype.error = function (message) {
