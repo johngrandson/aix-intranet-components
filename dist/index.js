@@ -4,10 +4,12 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var PropTypes = _interopDefault(require('prop-types'));
+var PropTypes = require('prop-types');
+var PropTypes__default = _interopDefault(PropTypes);
 var React = require('react');
 var React__default = _interopDefault(React);
-var ReactDOM = _interopDefault(require('react-dom'));
+var ReactDOM = require('react-dom');
+var ReactDOM__default = _interopDefault(ReactDOM);
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -431,15 +433,15 @@ function DOMElement(props, propName, componentName) {
     return new Error('Invalid prop `' + propName + '` supplied to `' + componentName + '`. Expected prop to be an instance of Element. Validation failed.');
   }
 }
-var targetPropType = PropTypes.oneOfType([PropTypes.string, PropTypes.func, DOMElement, PropTypes.shape({
-  current: PropTypes.any
+var targetPropType = PropTypes__default.oneOfType([PropTypes__default.string, PropTypes__default.func, DOMElement, PropTypes__default.shape({
+  current: PropTypes__default.any
 })]);
-var tagPropType = PropTypes.oneOfType([PropTypes.func, PropTypes.string, PropTypes.shape({
-  $$typeof: PropTypes.symbol,
-  render: PropTypes.func
-}), PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.string, PropTypes.shape({
-  $$typeof: PropTypes.symbol,
-  render: PropTypes.func
+var tagPropType = PropTypes__default.oneOfType([PropTypes__default.func, PropTypes__default.string, PropTypes__default.shape({
+  $$typeof: PropTypes__default.symbol,
+  render: PropTypes__default.func
+}), PropTypes__default.arrayOf(PropTypes__default.oneOfType([PropTypes__default.func, PropTypes__default.string, PropTypes__default.shape({
+  $$typeof: PropTypes__default.symbol,
+  render: PropTypes__default.func
 })]))]);
 /* eslint key-spacing: ["error", { afterColon: true, align: "value" }] */
 // These are all setup to match what is in the bootstrap _variables.scss
@@ -562,9 +564,9 @@ var focusableElements = ['a[href]', 'area[href]', 'input:not([disabled]):not([ty
 
 var propTypes = {
   tag: tagPropType,
-  fluid: PropTypes.bool,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  fluid: PropTypes__default.bool,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 var defaultProps = {
   tag: 'div'
@@ -588,10 +590,10 @@ Container.defaultProps = defaultProps;
 
 var propTypes$1 = {
   tag: tagPropType,
-  noGutters: PropTypes.bool,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  form: PropTypes.bool
+  noGutters: PropTypes__default.bool,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  form: PropTypes__default.bool
 };
 var defaultProps$1 = {
   tag: 'div'
@@ -653,9 +655,9 @@ function isObject$1(value) {
 var lodash_isobject = isObject$1;
 
 var colWidths = ['xs', 'sm', 'md', 'lg', 'xl'];
-var stringOrNumberProp = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
-var columnProps = PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string, PropTypes.shape({
-  size: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string]),
+var stringOrNumberProp = PropTypes__default.oneOfType([PropTypes__default.number, PropTypes__default.string]);
+var columnProps = PropTypes__default.oneOfType([PropTypes__default.bool, PropTypes__default.number, PropTypes__default.string, PropTypes__default.shape({
+  size: PropTypes__default.oneOfType([PropTypes__default.bool, PropTypes__default.number, PropTypes__default.string]),
   order: stringOrNumberProp,
   offset: stringOrNumberProp
 })]);
@@ -666,9 +668,9 @@ var propTypes$2 = {
   md: columnProps,
   lg: columnProps,
   xl: columnProps,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  widths: PropTypes.array
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  widths: PropTypes__default.array
 };
 var defaultProps$2 = {
   tag: 'div',
@@ -730,17 +732,17 @@ Col.propTypes = propTypes$2;
 Col.defaultProps = defaultProps$2;
 
 var propTypes$3 = {
-  light: PropTypes.bool,
-  dark: PropTypes.bool,
-  full: PropTypes.bool,
-  fixed: PropTypes.string,
-  sticky: PropTypes.string,
-  color: PropTypes.string,
-  role: PropTypes.string,
+  light: PropTypes__default.bool,
+  dark: PropTypes__default.bool,
+  full: PropTypes__default.bool,
+  fixed: PropTypes__default.string,
+  sticky: PropTypes__default.string,
+  color: PropTypes__default.string,
+  role: PropTypes__default.string,
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  expand: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  expand: PropTypes__default.oneOfType([PropTypes__default.bool, PropTypes__default.string])
 };
 var defaultProps$3 = {
   tag: 'nav',
@@ -785,8 +787,8 @@ Navbar.defaultProps = defaultProps$3;
 
 var propTypes$4 = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 var defaultProps$4 = {
   tag: 'a'
@@ -809,24 +811,24 @@ NavbarBrand.defaultProps = defaultProps$4;
 
 var propTypes$5 = {
   tag: tagPropType,
-  type: PropTypes.string,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  children: PropTypes.node
+  type: PropTypes__default.string,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  children: PropTypes__default.node
 };
 
 var propTypes$6 = {
-  tabs: PropTypes.bool,
-  pills: PropTypes.bool,
-  vertical: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-  horizontal: PropTypes.string,
-  justified: PropTypes.bool,
-  fill: PropTypes.bool,
-  navbar: PropTypes.bool,
-  card: PropTypes.bool,
+  tabs: PropTypes__default.bool,
+  pills: PropTypes__default.bool,
+  vertical: PropTypes__default.oneOfType([PropTypes__default.bool, PropTypes__default.string]),
+  horizontal: PropTypes__default.string,
+  justified: PropTypes__default.bool,
+  fill: PropTypes__default.bool,
+  navbar: PropTypes__default.bool,
+  card: PropTypes__default.bool,
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 var defaultProps$6 = {
   tag: 'ul',
@@ -875,9 +877,9 @@ Nav.defaultProps = defaultProps$6;
 
 var propTypes$7 = {
   tag: tagPropType,
-  active: PropTypes.bool,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  active: PropTypes__default.bool,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 var defaultProps$7 = {
   tag: 'li'
@@ -915,13 +917,13 @@ function _inheritsLoose(subClass, superClass) {
 
 var propTypes$8 = {
   tag: tagPropType,
-  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.string]),
-  disabled: PropTypes.bool,
-  active: PropTypes.bool,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  onClick: PropTypes.func,
-  href: PropTypes.any
+  innerRef: PropTypes__default.oneOfType([PropTypes__default.object, PropTypes__default.func, PropTypes__default.string]),
+  disabled: PropTypes__default.bool,
+  active: PropTypes__default.bool,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  onClick: PropTypes__default.func,
+  href: PropTypes__default.any
 };
 var defaultProps$8 = {
   tag: 'a'
@@ -986,35 +988,35 @@ NavLink.defaultProps = defaultProps$8;
 var propTypes$9 = {
   tag: tagPropType,
   listTag: tagPropType,
-  className: PropTypes.string,
-  listClassName: PropTypes.string,
-  cssModule: PropTypes.object,
-  children: PropTypes.node,
-  'aria-label': PropTypes.string
+  className: PropTypes__default.string,
+  listClassName: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  children: PropTypes__default.node,
+  'aria-label': PropTypes__default.string
 };
 
 var propTypes$a = {
   tag: tagPropType,
-  active: PropTypes.bool,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  active: PropTypes__default.bool,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$b = {
-  active: PropTypes.bool,
-  'aria-label': PropTypes.string,
-  block: PropTypes.bool,
-  color: PropTypes.string,
-  disabled: PropTypes.bool,
-  outline: PropTypes.bool,
+  active: PropTypes__default.bool,
+  'aria-label': PropTypes__default.string,
+  block: PropTypes__default.bool,
+  color: PropTypes__default.string,
+  disabled: PropTypes__default.bool,
+  outline: PropTypes__default.bool,
   tag: tagPropType,
-  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.string]),
-  onClick: PropTypes.func,
-  size: PropTypes.string,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  close: PropTypes.bool
+  innerRef: PropTypes__default.oneOfType([PropTypes__default.object, PropTypes__default.func, PropTypes__default.string]),
+  onClick: PropTypes__default.func,
+  size: PropTypes__default.string,
+  children: PropTypes__default.node,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  close: PropTypes__default.bool
 };
 var defaultProps$b = {
   color: 'secondary',
@@ -3875,7 +3877,7 @@ var _react2 = _interopRequireDefault(React__default);
 
 
 
-var _propTypes2 = _interopRequireDefault(PropTypes);
+var _propTypes2 = _interopRequireDefault(PropTypes__default);
 
 
 
@@ -4460,21 +4462,21 @@ function Reference(props) {
 var DropdownContext = React__default.createContext({});
 
 var propTypes$c = {
-  disabled: PropTypes.bool,
-  direction: PropTypes.oneOf(['up', 'down', 'left', 'right']),
-  group: PropTypes.bool,
-  isOpen: PropTypes.bool,
-  nav: PropTypes.bool,
-  active: PropTypes.bool,
-  addonType: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['prepend', 'append'])]),
-  size: PropTypes.string,
+  disabled: PropTypes__default.bool,
+  direction: PropTypes__default.oneOf(['up', 'down', 'left', 'right']),
+  group: PropTypes__default.bool,
+  isOpen: PropTypes__default.bool,
+  nav: PropTypes__default.bool,
+  active: PropTypes__default.bool,
+  addonType: PropTypes__default.oneOfType([PropTypes__default.bool, PropTypes__default.oneOf(['prepend', 'append'])]),
+  size: PropTypes__default.string,
   tag: tagPropType,
-  toggle: PropTypes.func,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  inNavbar: PropTypes.bool,
-  setActiveFromChild: PropTypes.bool
+  toggle: PropTypes__default.func,
+  children: PropTypes__default.node,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  inNavbar: PropTypes__default.bool,
+  setActiveFromChild: PropTypes__default.bool
 };
 var defaultProps$c = {
   isOpen: false,
@@ -4691,7 +4693,7 @@ Dropdown.propTypes = propTypes$c;
 Dropdown.defaultProps = defaultProps$c;
 
 var propTypes$d = {
-  children: PropTypes.node
+  children: PropTypes__default.node
 };
 
 var ButtonDropdown = function ButtonDropdown(props) {
@@ -4704,33 +4706,33 @@ ButtonDropdown.propTypes = propTypes$d;
 
 var propTypes$e = {
   tag: tagPropType,
-  'aria-label': PropTypes.string,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  role: PropTypes.string,
-  size: PropTypes.string,
-  vertical: PropTypes.bool
+  'aria-label': PropTypes__default.string,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  role: PropTypes__default.string,
+  size: PropTypes__default.string,
+  vertical: PropTypes__default.bool
 };
 
 var propTypes$f = {
   tag: tagPropType,
-  'aria-label': PropTypes.string,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  role: PropTypes.string
+  'aria-label': PropTypes__default.string,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  role: PropTypes__default.string
 };
 
 var propTypes$g = {
-  children: PropTypes.node,
-  active: PropTypes.bool,
-  disabled: PropTypes.bool,
-  divider: PropTypes.bool,
+  children: PropTypes__default.node,
+  active: PropTypes__default.bool,
+  disabled: PropTypes__default.bool,
+  divider: PropTypes__default.bool,
   tag: tagPropType,
-  header: PropTypes.bool,
-  onClick: PropTypes.func,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  toggle: PropTypes.bool
+  header: PropTypes__default.bool,
+  onClick: PropTypes__default.func,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  toggle: PropTypes__default.bool
 };
 var defaultProps$f = {
   tag: 'button',
@@ -4860,13 +4862,13 @@ function _objectSpread(target) {
 
 var propTypes$h = {
   tag: tagPropType,
-  children: PropTypes.node.isRequired,
-  right: PropTypes.bool,
-  flip: PropTypes.bool,
-  modifiers: PropTypes.object,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  persist: PropTypes.bool
+  children: PropTypes__default.node.isRequired,
+  right: PropTypes__default.bool,
+  flip: PropTypes__default.bool,
+  modifiers: PropTypes__default.object,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  persist: PropTypes__default.bool
 };
 var defaultProps$g = {
   tag: 'div',
@@ -4956,17 +4958,17 @@ DropdownMenu.defaultProps = defaultProps$g;
 DropdownMenu.contextType = DropdownContext;
 
 var propTypes$i = {
-  caret: PropTypes.bool,
-  color: PropTypes.string,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func,
-  'aria-haspopup': PropTypes.bool,
-  split: PropTypes.bool,
+  caret: PropTypes__default.bool,
+  color: PropTypes__default.string,
+  children: PropTypes__default.node,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  disabled: PropTypes__default.bool,
+  onClick: PropTypes__default.func,
+  'aria-haspopup': PropTypes__default.bool,
+  split: PropTypes__default.bool,
   tag: tagPropType,
-  nav: PropTypes.bool
+  nav: PropTypes__default.bool
 };
 var defaultProps$h = {
   'aria-haspopup': true,
@@ -5287,7 +5289,7 @@ var PropTypes$1 = createCommonjsModule(function (module, exports) {
 exports.__esModule = true;
 exports.classNamesShape = exports.timeoutsShape = void 0;
 
-var _propTypes = _interopRequireDefault(PropTypes);
+var _propTypes = _interopRequireDefault(PropTypes__default);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5321,11 +5323,11 @@ var Transition_1 = createCommonjsModule(function (module, exports) {
 exports.__esModule = true;
 exports.default = exports.EXITING = exports.ENTERED = exports.ENTERING = exports.EXITED = exports.UNMOUNTED = void 0;
 
-var PropTypes$$1 = _interopRequireWildcard(PropTypes);
+var PropTypes$$1 = _interopRequireWildcard(PropTypes__default);
 
 var _react = _interopRequireDefault(React__default);
 
-var _reactDom = _interopRequireDefault(ReactDOM);
+var _reactDom = _interopRequireDefault(ReactDOM__default);
 
 
 
@@ -5939,7 +5941,7 @@ var CSSTransition_1 = createCommonjsModule(function (module, exports) {
 exports.__esModule = true;
 exports.default = void 0;
 
-var PropTypes$$1 = _interopRequireWildcard(PropTypes);
+var PropTypes$$1 = _interopRequireWildcard(PropTypes__default);
 
 var _addClass = _interopRequireDefault(addClass_1);
 
@@ -6465,7 +6467,7 @@ var TransitionGroup_1 = createCommonjsModule(function (module, exports) {
 exports.__esModule = true;
 exports.default = void 0;
 
-var _propTypes = _interopRequireDefault(PropTypes);
+var _propTypes = _interopRequireDefault(PropTypes__default);
 
 var _react = _interopRequireDefault(React__default);
 
@@ -6677,7 +6679,7 @@ var ReplaceTransition_1 = createCommonjsModule(function (module, exports) {
 exports.__esModule = true;
 exports.default = void 0;
 
-var _propTypes = _interopRequireDefault(PropTypes);
+var _propTypes = _interopRequireDefault(PropTypes__default);
 
 var _react = _interopRequireDefault(React__default);
 
@@ -6777,7 +6779,7 @@ function (_React$Component) {
     var child = _react.default.Children.toArray(children)[idx];
 
     if (child.props[handler]) (_child$props = child.props)[handler].apply(_child$props, originalArgs);
-    if (this.props[handler]) this.props[handler]((0, ReactDOM.findDOMNode)(this));
+    if (this.props[handler]) this.props[handler]((0, ReactDOM__default.findDOMNode)(this));
   };
 
   _proto.render = function render() {
@@ -6853,13 +6855,13 @@ var reactTransitionGroup_3 = reactTransitionGroup.ReplaceTransition;
 var reactTransitionGroup_4 = reactTransitionGroup.CSSTransition;
 
 var propTypes$j = _objectSpread({}, reactTransitionGroup_1.propTypes, {
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  children: PropTypes__default.oneOfType([PropTypes__default.arrayOf(PropTypes__default.node), PropTypes__default.node]),
   tag: tagPropType,
-  baseClass: PropTypes.string,
-  baseClassActive: PropTypes.string,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.func])
+  baseClass: PropTypes__default.string,
+  baseClassActive: PropTypes__default.string,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  innerRef: PropTypes__default.oneOfType([PropTypes__default.object, PropTypes__default.string, PropTypes__default.func])
 });
 
 var defaultProps$i = _objectSpread({}, reactTransitionGroup_1.defaultProps, {
@@ -6900,24 +6902,24 @@ Fade.propTypes = propTypes$j;
 Fade.defaultProps = defaultProps$i;
 
 var propTypes$k = {
-  color: PropTypes.string,
-  pill: PropTypes.bool,
+  color: PropTypes__default.string,
+  pill: PropTypes__default.bool,
   tag: tagPropType,
-  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.string]),
-  children: PropTypes.node,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  innerRef: PropTypes__default.oneOfType([PropTypes__default.object, PropTypes__default.func, PropTypes__default.string]),
+  children: PropTypes__default.node,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$l = {
   tag: tagPropType,
-  inverse: PropTypes.bool,
-  color: PropTypes.string,
-  body: PropTypes.bool,
-  outline: PropTypes.bool,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.func])
+  inverse: PropTypes__default.bool,
+  color: PropTypes__default.string,
+  body: PropTypes__default.bool,
+  outline: PropTypes__default.bool,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  innerRef: PropTypes__default.oneOfType([PropTypes__default.object, PropTypes__default.string, PropTypes__default.func])
 };
 var defaultProps$k = {
   tag: 'div'
@@ -6946,27 +6948,27 @@ Card.defaultProps = defaultProps$k;
 
 var propTypes$m = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$n = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$o = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$p = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.func])
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  innerRef: PropTypes__default.oneOfType([PropTypes__default.object, PropTypes__default.string, PropTypes__default.func])
 };
 var defaultProps$o = {
   tag: 'div'
@@ -6991,21 +6993,21 @@ CardBody.defaultProps = defaultProps$o;
 
 var propTypes$q = {
   tag: tagPropType,
-  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.string]),
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  innerRef: PropTypes__default.oneOfType([PropTypes__default.object, PropTypes__default.func, PropTypes__default.string]),
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$r = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$s = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 var defaultProps$r = {
   tag: 'div'
@@ -7028,16 +7030,16 @@ CardHeader.defaultProps = defaultProps$r;
 
 var propTypes$t = {
   tag: tagPropType,
-  top: PropTypes.bool,
-  bottom: PropTypes.bool,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  top: PropTypes__default.bool,
+  bottom: PropTypes__default.bool,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$u = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var CarouselItem =
@@ -7137,11 +7139,11 @@ function (_React$Component) {
 
 CarouselItem.propTypes = _objectSpread({}, reactTransitionGroup_1.propTypes, {
   tag: tagPropType,
-  in: PropTypes.bool,
-  cssModule: PropTypes.object,
-  children: PropTypes.node,
-  slide: PropTypes.bool,
-  className: PropTypes.string
+  in: PropTypes__default.bool,
+  cssModule: PropTypes__default.object,
+  children: PropTypes__default.node,
+  slide: PropTypes__default.bool,
+  className: PropTypes__default.string
 });
 CarouselItem.defaultProps = _objectSpread({}, reactTransitionGroup_1.defaultProps, {
   tag: 'div',
@@ -7149,7 +7151,7 @@ CarouselItem.defaultProps = _objectSpread({}, reactTransitionGroup_1.defaultProp
   slide: true
 });
 CarouselItem.contextTypes = {
-  direction: PropTypes.string
+  direction: PropTypes__default.string
 };
 
 var Carousel =
@@ -7377,33 +7379,33 @@ function (_React$Component) {
 
 Carousel.propTypes = {
   // the current active slide of the carousel
-  activeIndex: PropTypes.number,
+  activeIndex: PropTypes__default.number,
   // a function which should advance the carousel to the next slide (via activeIndex)
-  next: PropTypes.func.isRequired,
+  next: PropTypes__default.func.isRequired,
   // a function which should advance the carousel to the previous slide (via activeIndex)
-  previous: PropTypes.func.isRequired,
+  previous: PropTypes__default.func.isRequired,
   // controls if the left and right arrow keys should control the carousel
-  keyboard: PropTypes.bool,
+  keyboard: PropTypes__default.bool,
 
   /* If set to "hover", pauses the cycling of the carousel on mouseenter and resumes the cycling of the carousel on
    * mouseleave. If set to false, hovering over the carousel won't pause it. (default: "hover")
    */
-  pause: PropTypes.oneOf(['hover', false]),
+  pause: PropTypes__default.oneOf(['hover', false]),
   // Autoplays the carousel after the user manually cycles the first item. If "carousel", autoplays the carousel on load.
   // This is how bootstrap defines it... I would prefer a bool named autoplay or something...
-  ride: PropTypes.oneOf(['carousel']),
+  ride: PropTypes__default.oneOf(['carousel']),
   // the interval at which the carousel automatically cycles (default: 5000)
   // eslint-disable-next-line react/no-unused-prop-types
-  interval: PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.bool]),
-  children: PropTypes.array,
+  interval: PropTypes__default.oneOfType([PropTypes__default.number, PropTypes__default.string, PropTypes__default.bool]),
+  children: PropTypes__default.array,
   // called when the mouse enters the Carousel
-  mouseEnter: PropTypes.func,
+  mouseEnter: PropTypes__default.func,
   // called when the mouse exits the Carousel
-  mouseLeave: PropTypes.func,
+  mouseLeave: PropTypes__default.func,
   // controls whether the slide animation on the Carousel works or not
-  slide: PropTypes.bool,
-  cssModule: PropTypes.object,
-  className: PropTypes.string
+  slide: PropTypes__default.bool,
+  cssModule: PropTypes__default.object,
+  className: PropTypes__default.string
 };
 Carousel.defaultProps = {
   interval: 5000,
@@ -7412,7 +7414,7 @@ Carousel.defaultProps = {
   slide: true
 };
 Carousel.childContextTypes = {
-  direction: PropTypes.string
+  direction: PropTypes__default.string
 };
 
 var CarouselControl = function CarouselControl(props) {
@@ -7441,11 +7443,11 @@ var CarouselControl = function CarouselControl(props) {
 };
 
 CarouselControl.propTypes = {
-  direction: PropTypes.oneOf(['prev', 'next']).isRequired,
-  onClickHandler: PropTypes.func.isRequired,
-  cssModule: PropTypes.object,
-  directionText: PropTypes.string,
-  className: PropTypes.string
+  direction: PropTypes__default.oneOf(['prev', 'next']).isRequired,
+  onClickHandler: PropTypes__default.func.isRequired,
+  cssModule: PropTypes__default.object,
+  directionText: PropTypes__default.string,
+  className: PropTypes__default.string
 };
 
 var CarouselIndicators = function CarouselIndicators(props) {
@@ -7474,11 +7476,11 @@ var CarouselIndicators = function CarouselIndicators(props) {
 };
 
 CarouselIndicators.propTypes = {
-  items: PropTypes.array.isRequired,
-  activeIndex: PropTypes.number.isRequired,
-  cssModule: PropTypes.object,
-  onClickHandler: PropTypes.func.isRequired,
-  className: PropTypes.string
+  items: PropTypes__default.array.isRequired,
+  activeIndex: PropTypes__default.number.isRequired,
+  cssModule: PropTypes__default.object,
+  onClickHandler: PropTypes__default.func.isRequired,
+  className: PropTypes__default.string
 };
 
 var CarouselCaption = function CarouselCaption(props) {
@@ -7493,22 +7495,22 @@ var CarouselCaption = function CarouselCaption(props) {
 };
 
 CarouselCaption.propTypes = {
-  captionHeader: PropTypes.string,
-  captionText: PropTypes.string.isRequired,
-  cssModule: PropTypes.object,
-  className: PropTypes.string
+  captionHeader: PropTypes__default.string,
+  captionText: PropTypes__default.string.isRequired,
+  cssModule: PropTypes__default.object,
+  className: PropTypes__default.string
 };
 
 var propTypes$v = {
-  items: PropTypes.array.isRequired,
-  indicators: PropTypes.bool,
-  controls: PropTypes.bool,
-  autoPlay: PropTypes.bool,
-  defaultActiveIndex: PropTypes.number,
-  activeIndex: PropTypes.number,
-  next: PropTypes.func,
-  previous: PropTypes.func,
-  goToIndex: PropTypes.func
+  items: PropTypes__default.array.isRequired,
+  indicators: PropTypes__default.bool,
+  controls: PropTypes__default.bool,
+  autoPlay: PropTypes__default.bool,
+  defaultActiveIndex: PropTypes__default.number,
+  activeIndex: PropTypes__default.number,
+  next: PropTypes__default.func,
+  previous: PropTypes__default.func,
+  goToIndex: PropTypes__default.func
 };
 
 var UncontrolledCarousel =
@@ -7624,59 +7626,59 @@ UncontrolledCarousel.defaultProps = {
 
 var propTypes$w = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$x = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$y = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$z = {
-  className: PropTypes.string,
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  type: PropTypes.string.isRequired,
-  label: PropTypes.node,
-  inline: PropTypes.bool,
-  valid: PropTypes.bool,
-  invalid: PropTypes.bool,
-  bsSize: PropTypes.string,
-  htmlFor: PropTypes.string,
-  cssModule: PropTypes.object,
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.array, PropTypes.func]),
-  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.func])
+  className: PropTypes__default.string,
+  id: PropTypes__default.oneOfType([PropTypes__default.string, PropTypes__default.number]).isRequired,
+  type: PropTypes__default.string.isRequired,
+  label: PropTypes__default.node,
+  inline: PropTypes__default.bool,
+  valid: PropTypes__default.bool,
+  invalid: PropTypes__default.bool,
+  bsSize: PropTypes__default.string,
+  htmlFor: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  children: PropTypes__default.oneOfType([PropTypes__default.node, PropTypes__default.array, PropTypes__default.func]),
+  innerRef: PropTypes__default.oneOfType([PropTypes__default.object, PropTypes__default.string, PropTypes__default.func])
 };
 
 function noop() {}
 
 var propTypes$A = {
-  children: PropTypes.node.isRequired,
-  popperClassName: PropTypes.string,
-  placement: PropTypes.string,
-  placementPrefix: PropTypes.string,
-  arrowClassName: PropTypes.string,
-  hideArrow: PropTypes.bool,
+  children: PropTypes__default.node.isRequired,
+  popperClassName: PropTypes__default.string,
+  placement: PropTypes__default.string,
+  placementPrefix: PropTypes__default.string,
+  arrowClassName: PropTypes__default.string,
+  hideArrow: PropTypes__default.bool,
   tag: tagPropType,
-  isOpen: PropTypes.bool.isRequired,
-  cssModule: PropTypes.object,
-  offset: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  fallbackPlacement: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-  flip: PropTypes.bool,
+  isOpen: PropTypes__default.bool.isRequired,
+  cssModule: PropTypes__default.object,
+  offset: PropTypes__default.oneOfType([PropTypes__default.string, PropTypes__default.number]),
+  fallbackPlacement: PropTypes__default.oneOfType([PropTypes__default.string, PropTypes__default.array]),
+  flip: PropTypes__default.bool,
   container: targetPropType,
   target: targetPropType.isRequired,
-  modifiers: PropTypes.object,
-  boundariesElement: PropTypes.oneOfType([PropTypes.string, DOMElement]),
-  onClosed: PropTypes.func,
-  fade: PropTypes.bool,
-  transition: PropTypes.shape(Fade.propTypes)
+  modifiers: PropTypes__default.object,
+  boundariesElement: PropTypes__default.oneOfType([PropTypes__default.string, DOMElement]),
+  onClosed: PropTypes__default.func,
+  fade: PropTypes__default.bool,
+  transition: PropTypes__default.shape(Fade.propTypes)
 };
 var defaultProps$x = {
   boundariesElement: 'scrollParent',
@@ -7842,7 +7844,7 @@ function (_React$Component) {
     this.setTargetNode(getTarget(this.props.target));
 
     if (this.state.isOpen) {
-      return this.props.container === 'inline' ? this.renderChildren() : ReactDOM.createPortal(React__default.createElement("div", {
+      return this.props.container === 'inline' ? this.renderChildren() : ReactDOM__default.createPortal(React__default.createElement("div", {
         ref: this.getRef
       }, this.renderChildren()), this.getContainerNode());
     }
@@ -7862,38 +7864,38 @@ var PopperTargetHelper = function PopperTargetHelper(props, context) {
 };
 
 PopperTargetHelper.contextTypes = {
-  popperManager: PropTypes.object.isRequired
+  popperManager: PropTypes__default.object.isRequired
 };
 PopperTargetHelper.propTypes = {
   target: targetPropType.isRequired
 };
 
 var propTypes$B = {
-  placement: PropTypes.oneOf(PopperPlacements),
+  placement: PropTypes__default.oneOf(PopperPlacements),
   target: targetPropType.isRequired,
   container: targetPropType,
-  isOpen: PropTypes.bool,
-  disabled: PropTypes.bool,
-  hideArrow: PropTypes.bool,
-  boundariesElement: PropTypes.oneOfType([PropTypes.string, DOMElement]),
-  className: PropTypes.string,
-  innerClassName: PropTypes.string,
-  arrowClassName: PropTypes.string,
-  popperClassName: PropTypes.string,
-  cssModule: PropTypes.object,
-  toggle: PropTypes.func,
-  autohide: PropTypes.bool,
-  placementPrefix: PropTypes.string,
-  delay: PropTypes.oneOfType([PropTypes.shape({
-    show: PropTypes.number,
-    hide: PropTypes.number
-  }), PropTypes.number]),
-  modifiers: PropTypes.object,
-  offset: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  innerRef: PropTypes.oneOfType([PropTypes.func, PropTypes.string, PropTypes.object]),
-  trigger: PropTypes.string,
-  fade: PropTypes.bool,
-  flip: PropTypes.bool
+  isOpen: PropTypes__default.bool,
+  disabled: PropTypes__default.bool,
+  hideArrow: PropTypes__default.bool,
+  boundariesElement: PropTypes__default.oneOfType([PropTypes__default.string, DOMElement]),
+  className: PropTypes__default.string,
+  innerClassName: PropTypes__default.string,
+  arrowClassName: PropTypes__default.string,
+  popperClassName: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  toggle: PropTypes__default.func,
+  autohide: PropTypes__default.bool,
+  placementPrefix: PropTypes__default.string,
+  delay: PropTypes__default.oneOfType([PropTypes__default.shape({
+    show: PropTypes__default.number,
+    hide: PropTypes__default.number
+  }), PropTypes__default.number]),
+  modifiers: PropTypes__default.object,
+  offset: PropTypes__default.oneOfType([PropTypes__default.string, PropTypes__default.number]),
+  innerRef: PropTypes__default.oneOfType([PropTypes__default.func, PropTypes__default.string, PropTypes__default.object]),
+  trigger: PropTypes__default.string,
+  fade: PropTypes__default.bool,
+  flip: PropTypes__default.bool
 };
 var DEFAULT_DELAYS = {
   show: 0,
@@ -8261,19 +8263,19 @@ function (_Component) {
   return UncontrolledPopover;
 }(React.Component);
 UncontrolledPopover.propTypes = _objectSpread({
-  defaultOpen: PropTypes.bool
+  defaultOpen: PropTypes__default.bool
 }, Popover.propTypes);
 
 var propTypes$C = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$D = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 /**
@@ -8286,23 +8288,23 @@ var propTypes$D = {
  */
 
 var propTypes$E = {
-  children: PropTypes.node,
-  bar: PropTypes.bool,
-  multi: PropTypes.bool,
+  children: PropTypes__default.node,
+  bar: PropTypes__default.bool,
+  multi: PropTypes__default.bool,
   tag: tagPropType,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  max: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  animated: PropTypes.bool,
-  striped: PropTypes.bool,
-  color: PropTypes.string,
-  className: PropTypes.string,
-  barClassName: PropTypes.string,
-  cssModule: PropTypes.object
+  value: PropTypes__default.oneOfType([PropTypes__default.string, PropTypes__default.number]),
+  max: PropTypes__default.oneOfType([PropTypes__default.string, PropTypes__default.number]),
+  animated: PropTypes__default.bool,
+  striped: PropTypes__default.bool,
+  color: PropTypes__default.string,
+  className: PropTypes__default.string,
+  barClassName: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$F = {
-  children: PropTypes.node.isRequired,
-  node: PropTypes.any
+  children: PropTypes__default.node.isRequired,
+  node: PropTypes__default.any
 };
 
 var Portal =
@@ -8334,7 +8336,7 @@ function (_React$Component) {
       document.body.appendChild(this.defaultNode);
     }
 
-    return ReactDOM.createPortal(this.props.children, this.props.node || this.defaultNode);
+    return ReactDOM__default.createPortal(this.props.children, this.props.node || this.defaultNode);
   };
 
   return Portal;
@@ -8344,37 +8346,37 @@ Portal.propTypes = propTypes$F;
 
 function noop$1() {}
 
-var FadePropTypes = PropTypes.shape(Fade.propTypes);
+var FadePropTypes = PropTypes__default.shape(Fade.propTypes);
 var propTypes$G = {
-  isOpen: PropTypes.bool,
-  autoFocus: PropTypes.bool,
-  centered: PropTypes.bool,
-  scrollable: PropTypes.bool,
-  size: PropTypes.string,
-  toggle: PropTypes.func,
-  keyboard: PropTypes.bool,
-  role: PropTypes.string,
-  labelledBy: PropTypes.string,
-  backdrop: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['static'])]),
-  onEnter: PropTypes.func,
-  onExit: PropTypes.func,
-  onOpened: PropTypes.func,
-  onClosed: PropTypes.func,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  wrapClassName: PropTypes.string,
-  modalClassName: PropTypes.string,
-  backdropClassName: PropTypes.string,
-  contentClassName: PropTypes.string,
-  external: PropTypes.node,
-  fade: PropTypes.bool,
-  cssModule: PropTypes.object,
-  zIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  isOpen: PropTypes__default.bool,
+  autoFocus: PropTypes__default.bool,
+  centered: PropTypes__default.bool,
+  scrollable: PropTypes__default.bool,
+  size: PropTypes__default.string,
+  toggle: PropTypes__default.func,
+  keyboard: PropTypes__default.bool,
+  role: PropTypes__default.string,
+  labelledBy: PropTypes__default.string,
+  backdrop: PropTypes__default.oneOfType([PropTypes__default.bool, PropTypes__default.oneOf(['static'])]),
+  onEnter: PropTypes__default.func,
+  onExit: PropTypes__default.func,
+  onOpened: PropTypes__default.func,
+  onClosed: PropTypes__default.func,
+  children: PropTypes__default.node,
+  className: PropTypes__default.string,
+  wrapClassName: PropTypes__default.string,
+  modalClassName: PropTypes__default.string,
+  backdropClassName: PropTypes__default.string,
+  contentClassName: PropTypes__default.string,
+  external: PropTypes__default.node,
+  fade: PropTypes__default.bool,
+  cssModule: PropTypes__default.object,
+  zIndex: PropTypes__default.oneOfType([PropTypes__default.number, PropTypes__default.string]),
   backdropTransition: FadePropTypes,
   modalTransition: FadePropTypes,
-  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.func]),
-  unmountOnClose: PropTypes.bool,
-  returnFocusAfterClose: PropTypes.bool
+  innerRef: PropTypes__default.oneOfType([PropTypes__default.object, PropTypes__default.string, PropTypes__default.func]),
+  unmountOnClose: PropTypes__default.bool,
+  returnFocusAfterClose: PropTypes__default.bool
 };
 var propsToOmit = Object.keys(propTypes$G);
 var defaultProps$D = {
@@ -8726,13 +8728,13 @@ Modal.openCount = 0;
 var propTypes$H = {
   tag: tagPropType,
   wrapTag: tagPropType,
-  toggle: PropTypes.func,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  children: PropTypes.node,
-  closeAriaLabel: PropTypes.string,
-  charCode: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  close: PropTypes.object
+  toggle: PropTypes__default.func,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  children: PropTypes__default.node,
+  closeAriaLabel: PropTypes__default.string,
+  charCode: PropTypes__default.oneOfType([PropTypes__default.string, PropTypes__default.number]),
+  close: PropTypes__default.object
 };
 var defaultProps$E = {
   tag: 'h5',
@@ -8781,8 +8783,8 @@ ModalHeader.defaultProps = defaultProps$E;
 
 var propTypes$I = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 var defaultProps$F = {
   tag: 'div'
@@ -8805,8 +8807,8 @@ ModalBody.defaultProps = defaultProps$F;
 
 var propTypes$J = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 var defaultProps$G = {
   tag: 'div'
@@ -8847,34 +8849,34 @@ Tooltip.propTypes = propTypes$B;
 Tooltip.defaultProps = defaultProps$H;
 
 var propTypes$K = {
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  size: PropTypes.string,
-  bordered: PropTypes.bool,
-  borderless: PropTypes.bool,
-  striped: PropTypes.bool,
-  dark: PropTypes.bool,
-  hover: PropTypes.bool,
-  responsive: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  size: PropTypes__default.string,
+  bordered: PropTypes__default.bool,
+  borderless: PropTypes__default.bool,
+  striped: PropTypes__default.bool,
+  dark: PropTypes__default.bool,
+  hover: PropTypes__default.bool,
+  responsive: PropTypes__default.oneOfType([PropTypes__default.bool, PropTypes__default.string]),
   tag: tagPropType,
   responsiveTag: tagPropType,
-  innerRef: PropTypes.oneOfType([PropTypes.func, PropTypes.string, PropTypes.object])
+  innerRef: PropTypes__default.oneOfType([PropTypes__default.func, PropTypes__default.string, PropTypes__default.object])
 };
 
 var propTypes$L = {
   tag: tagPropType,
-  flush: PropTypes.bool,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  flush: PropTypes__default.bool,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$M = {
-  children: PropTypes.node,
-  inline: PropTypes.bool,
+  children: PropTypes__default.node,
+  inline: PropTypes__default.bool,
   tag: tagPropType,
-  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.string]),
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  innerRef: PropTypes__default.oneOfType([PropTypes__default.object, PropTypes__default.func, PropTypes__default.string]),
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 var defaultProps$K = {
   tag: 'form'
@@ -8933,47 +8935,47 @@ Form.propTypes = propTypes$M;
 Form.defaultProps = defaultProps$K;
 
 var propTypes$N = {
-  children: PropTypes.node,
+  children: PropTypes__default.node,
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  valid: PropTypes.bool,
-  tooltip: PropTypes.bool
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  valid: PropTypes__default.bool,
+  tooltip: PropTypes__default.bool
 };
 
 var propTypes$O = {
-  children: PropTypes.node,
-  row: PropTypes.bool,
-  check: PropTypes.bool,
-  inline: PropTypes.bool,
-  disabled: PropTypes.bool,
+  children: PropTypes__default.node,
+  row: PropTypes__default.bool,
+  check: PropTypes__default.bool,
+  inline: PropTypes__default.bool,
+  disabled: PropTypes__default.bool,
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$P = {
-  children: PropTypes.node,
-  inline: PropTypes.bool,
+  children: PropTypes__default.node,
+  inline: PropTypes__default.bool,
   tag: tagPropType,
-  color: PropTypes.string,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  color: PropTypes__default.string,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$Q = {
-  children: PropTypes.node,
-  type: PropTypes.string,
-  size: PropTypes.string,
-  bsSize: PropTypes.string,
-  valid: PropTypes.bool,
-  invalid: PropTypes.bool,
+  children: PropTypes__default.node,
+  type: PropTypes__default.string,
+  size: PropTypes__default.string,
+  bsSize: PropTypes__default.string,
+  valid: PropTypes__default.bool,
+  invalid: PropTypes__default.bool,
   tag: tagPropType,
-  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.string]),
-  plaintext: PropTypes.bool,
-  addon: PropTypes.bool,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  innerRef: PropTypes__default.oneOfType([PropTypes__default.object, PropTypes__default.func, PropTypes__default.string]),
+  plaintext: PropTypes__default.bool,
+  addon: PropTypes__default.bool,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 var defaultProps$O = {
   type: 'text'
@@ -9075,67 +9077,67 @@ Input.defaultProps = defaultProps$O;
 
 var propTypes$R = {
   tag: tagPropType,
-  size: PropTypes.string,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  size: PropTypes__default.string,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$S = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$T = {
   tag: tagPropType,
-  addonType: PropTypes.oneOf(['prepend', 'append']).isRequired,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  addonType: PropTypes__default.oneOf(['prepend', 'append']).isRequired,
+  children: PropTypes__default.node,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$U = {
-  addonType: PropTypes.oneOf(['prepend', 'append']).isRequired,
-  children: PropTypes.node
+  addonType: PropTypes__default.oneOf(['prepend', 'append']).isRequired,
+  children: PropTypes__default.node
 };
 
-var stringOrNumberProp$1 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
-var columnProps$1 = PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.shape({
+var stringOrNumberProp$1 = PropTypes__default.oneOfType([PropTypes__default.number, PropTypes__default.string]);
+var columnProps$1 = PropTypes__default.oneOfType([PropTypes__default.string, PropTypes__default.number, PropTypes__default.shape({
   size: stringOrNumberProp$1,
   order: stringOrNumberProp$1,
   offset: stringOrNumberProp$1
 })]);
 var propTypes$V = {
-  children: PropTypes.node,
-  hidden: PropTypes.bool,
-  check: PropTypes.bool,
-  size: PropTypes.string,
-  for: PropTypes.string,
+  children: PropTypes__default.node,
+  hidden: PropTypes__default.bool,
+  check: PropTypes__default.bool,
+  size: PropTypes__default.string,
+  for: PropTypes__default.string,
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
   xs: columnProps$1,
   sm: columnProps$1,
   md: columnProps$1,
   lg: columnProps$1,
   xl: columnProps$1,
-  widths: PropTypes.array
+  widths: PropTypes__default.array
 };
 
 var propTypes$W = {
-  body: PropTypes.bool,
-  bottom: PropTypes.bool,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  heading: PropTypes.bool,
-  left: PropTypes.bool,
-  list: PropTypes.bool,
-  middle: PropTypes.bool,
-  object: PropTypes.bool,
-  right: PropTypes.bool,
+  body: PropTypes__default.bool,
+  bottom: PropTypes__default.bool,
+  children: PropTypes__default.node,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  heading: PropTypes__default.bool,
+  left: PropTypes__default.bool,
+  list: PropTypes__default.bool,
+  middle: PropTypes__default.bool,
+  object: PropTypes__default.bool,
+  right: PropTypes__default.bool,
   tag: tagPropType,
-  top: PropTypes.bool
+  top: PropTypes__default.bool
 };
 
 var Media = function Media(props) {
@@ -9188,14 +9190,14 @@ var Media = function Media(props) {
 Media.propTypes = propTypes$W;
 
 var propTypes$X = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  listClassName: PropTypes.string,
-  cssModule: PropTypes.object,
-  size: PropTypes.string,
+  children: PropTypes__default.node,
+  className: PropTypes__default.string,
+  listClassName: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  size: PropTypes__default.string,
   tag: tagPropType,
   listTag: tagPropType,
-  'aria-label': PropTypes.string
+  'aria-label': PropTypes__default.string
 };
 var defaultProps$T = {
   tag: 'nav',
@@ -9229,11 +9231,11 @@ Pagination.propTypes = propTypes$X;
 Pagination.defaultProps = defaultProps$T;
 
 var propTypes$Y = {
-  active: PropTypes.bool,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  disabled: PropTypes.bool,
+  active: PropTypes__default.bool,
+  children: PropTypes__default.node,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  disabled: PropTypes__default.bool,
   tag: tagPropType
 };
 var defaultProps$U = {
@@ -9261,14 +9263,14 @@ PaginationItem.propTypes = propTypes$Y;
 PaginationItem.defaultProps = defaultProps$U;
 
 var propTypes$Z = {
-  'aria-label': PropTypes.string,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  next: PropTypes.bool,
-  previous: PropTypes.bool,
-  first: PropTypes.bool,
-  last: PropTypes.bool,
+  'aria-label': PropTypes__default.string,
+  children: PropTypes__default.node,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  next: PropTypes__default.bool,
+  previous: PropTypes__default.bool,
+  first: PropTypes__default.bool,
+  last: PropTypes__default.bool,
   tag: tagPropType
 };
 var defaultProps$V = {
@@ -9351,9 +9353,9 @@ var TabContext = React__default.createContext({});
 
 var propTypes$_ = {
   tag: tagPropType,
-  activeTab: PropTypes.any,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  activeTab: PropTypes__default.any,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 var defaultProps$W = {
   tag: 'div'
@@ -9411,31 +9413,31 @@ TabContent.defaultProps = defaultProps$W;
 
 var propTypes$10 = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  tabId: PropTypes.any
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  tabId: PropTypes__default.any
 };
 
 var propTypes$11 = {
   tag: tagPropType,
-  fluid: PropTypes.bool,
-  className: PropTypes.string,
-  cssModule: PropTypes.object
+  fluid: PropTypes__default.bool,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$12 = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  closeClassName: PropTypes.string,
-  closeAriaLabel: PropTypes.string,
-  cssModule: PropTypes.object,
-  color: PropTypes.string,
-  fade: PropTypes.bool,
-  isOpen: PropTypes.bool,
-  toggle: PropTypes.func,
+  children: PropTypes__default.node,
+  className: PropTypes__default.string,
+  closeClassName: PropTypes__default.string,
+  closeAriaLabel: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  color: PropTypes__default.string,
+  fade: PropTypes__default.bool,
+  isOpen: PropTypes__default.bool,
+  toggle: PropTypes__default.func,
   tag: tagPropType,
-  transition: PropTypes.shape(Fade.propTypes),
-  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.func])
+  transition: PropTypes__default.shape(Fade.propTypes),
+  innerRef: PropTypes__default.oneOfType([PropTypes__default.object, PropTypes__default.string, PropTypes__default.func])
 };
 var defaultProps$Z = {
   color: 'success',
@@ -9493,14 +9495,14 @@ Alert.propTypes = propTypes$12;
 Alert.defaultProps = defaultProps$Z;
 
 var propTypes$13 = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  fade: PropTypes.bool,
-  isOpen: PropTypes.bool,
+  children: PropTypes__default.node,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  fade: PropTypes__default.bool,
+  isOpen: PropTypes__default.bool,
   tag: tagPropType,
-  transition: PropTypes.shape(Fade.propTypes),
-  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.func])
+  transition: PropTypes__default.shape(Fade.propTypes),
+  innerRef: PropTypes__default.oneOfType([PropTypes__default.object, PropTypes__default.string, PropTypes__default.func])
 };
 var defaultProps$_ = {
   isOpen: true,
@@ -9513,34 +9515,34 @@ var defaultProps$_ = {
 
 var propTypes$14 = {
   tag: tagPropType,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.func])
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  innerRef: PropTypes__default.oneOfType([PropTypes__default.object, PropTypes__default.string, PropTypes__default.func])
 };
 
 var propTypes$15 = {
   tag: tagPropType,
-  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  icon: PropTypes__default.oneOfType([PropTypes__default.string, PropTypes__default.node]),
   wrapTag: tagPropType,
-  toggle: PropTypes.func,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  children: PropTypes.node,
-  closeAriaLabel: PropTypes.string,
-  charCode: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  close: PropTypes.object
+  toggle: PropTypes__default.func,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  children: PropTypes__default.node,
+  closeAriaLabel: PropTypes__default.string,
+  charCode: PropTypes__default.oneOfType([PropTypes__default.string, PropTypes__default.number]),
+  close: PropTypes__default.object
 };
 
 var _transitionStatusToCl;
 
 var propTypes$16 = _objectSpread({}, reactTransitionGroup_1.propTypes, {
-  isOpen: PropTypes.bool,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  isOpen: PropTypes__default.bool,
+  children: PropTypes__default.oneOfType([PropTypes__default.arrayOf(PropTypes__default.node), PropTypes__default.node]),
   tag: tagPropType,
-  className: PropTypes.node,
-  navbar: PropTypes.bool,
-  cssModule: PropTypes.object,
-  innerRef: PropTypes.oneOfType([PropTypes.func, PropTypes.string, PropTypes.object])
+  className: PropTypes__default.node,
+  navbar: PropTypes__default.bool,
+  cssModule: PropTypes__default.object,
+  innerRef: PropTypes__default.oneOfType([PropTypes__default.func, PropTypes__default.string, PropTypes__default.object])
 });
 
 var defaultProps$12 = _objectSpread({}, reactTransitionGroup_1.defaultProps, {
@@ -9665,24 +9667,24 @@ Collapse.defaultProps = defaultProps$12;
 
 var propTypes$17 = {
   tag: tagPropType,
-  active: PropTypes.bool,
-  disabled: PropTypes.bool,
-  color: PropTypes.string,
-  action: PropTypes.bool,
-  className: PropTypes.any,
-  cssModule: PropTypes.object
+  active: PropTypes__default.bool,
+  disabled: PropTypes__default.bool,
+  color: PropTypes__default.string,
+  action: PropTypes__default.bool,
+  className: PropTypes__default.any,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$18 = {
   tag: tagPropType,
-  className: PropTypes.any,
-  cssModule: PropTypes.object
+  className: PropTypes__default.any,
+  cssModule: PropTypes__default.object
 };
 
 var propTypes$19 = {
   tag: tagPropType,
-  className: PropTypes.any,
-  cssModule: PropTypes.object
+  className: PropTypes__default.any,
+  cssModule: PropTypes__default.object
 };
 
 var UncontrolledAlert =
@@ -9755,14 +9757,14 @@ function (_Component) {
   return UncontrolledButtonDropdown;
 }(React.Component);
 UncontrolledButtonDropdown.propTypes = _objectSpread({
-  defaultOpen: PropTypes.bool
+  defaultOpen: PropTypes__default.bool
 }, ButtonDropdown.propTypes);
 
 var omitKeys$2 = ['toggleEvents', 'defaultOpen'];
 var propTypes$1a = {
-  defaultOpen: PropTypes.bool,
-  toggler: PropTypes.string.isRequired,
-  toggleEvents: PropTypes.arrayOf(PropTypes.string)
+  defaultOpen: PropTypes__default.bool,
+  toggler: PropTypes__default.string.isRequired,
+  toggleEvents: PropTypes__default.arrayOf(PropTypes__default.string)
 };
 var defaultProps$16 = {
   toggleEvents: defaultToggleEvents
@@ -9860,7 +9862,7 @@ function (_Component) {
   return UncontrolledDropdown;
 }(React.Component);
 UncontrolledDropdown.propTypes = _objectSpread({
-  defaultOpen: PropTypes.bool
+  defaultOpen: PropTypes__default.bool
 }, Dropdown.propTypes);
 
 var omitKeys$4 = ['defaultOpen'];
@@ -9899,17 +9901,17 @@ function (_Component) {
   return UncontrolledTooltip;
 }(React.Component);
 UncontrolledTooltip.propTypes = _objectSpread({
-  defaultOpen: PropTypes.bool
+  defaultOpen: PropTypes__default.bool
 }, Tooltip.propTypes);
 
 var propTypes$1b = {
   tag: tagPropType,
-  type: PropTypes.string,
-  size: PropTypes.string,
-  color: PropTypes.string,
-  className: PropTypes.string,
-  cssModule: PropTypes.object,
-  children: PropTypes.string
+  type: PropTypes__default.string,
+  size: PropTypes__default.string,
+  color: PropTypes__default.string,
+  className: PropTypes__default.string,
+  cssModule: PropTypes__default.object,
+  children: PropTypes__default.string
 };
 var defaultProps$17 = {
   tag: 'div',
@@ -11946,7 +11948,7 @@ var withConfig = function withConfig(Component) {
   }
 
   withAvatarConfig.contextTypes = {
-    reactAvatar: PropTypes.object
+    reactAvatar: PropTypes__default.object
   };
   return withAvatarConfig;
 };
@@ -11996,15 +11998,15 @@ function (_React$Component) {
 _defineProperty$2(ConfigProvider, "displayName", 'ConfigProvider');
 
 _defineProperty$2(ConfigProvider, "propTypes", {
-  cache: PropTypes.object,
-  colors: PropTypes.arrayOf(PropTypes.string),
-  initials: PropTypes.func,
-  avatarRedirectUrl: PropTypes.string,
-  children: PropTypes.node
+  cache: PropTypes__default.object,
+  colors: PropTypes__default.arrayOf(PropTypes__default.string),
+  initials: PropTypes__default.func,
+  avatarRedirectUrl: PropTypes__default.string,
+  children: PropTypes__default.node
 });
 
 _defineProperty$2(ConfigProvider, "childContextTypes", {
-  reactAvatar: PropTypes.object
+  reactAvatar: PropTypes__default.object
 });
 
 function _classCallCheck$2(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12402,8 +12404,8 @@ var GravatarSource = function GravatarSource(_props) {
 };
 
 _defineProperty$3(GravatarSource, "propTypes", {
-  email: PropTypes.string,
-  md5Email: PropTypes.string
+  email: PropTypes__default.string,
+  md5Email: PropTypes__default.string
 });
 
 function _classCallCheck$4(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12436,7 +12438,7 @@ var FacebookSource = function FacebookSource(props) {
 };
 
 _defineProperty$4(FacebookSource, "propTypes", {
-  facebookId: PropTypes.string
+  facebookId: PropTypes__default.string
 });
 
 function _classCallCheck$5(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12491,7 +12493,7 @@ function () {
 }();
 
 _defineProperty$5(TwitterSource, "propTypes", {
-  twitterHandle: PropTypes.string
+  twitterHandle: PropTypes__default.string
 });
 
 function _classCallCheck$6(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12539,7 +12541,7 @@ var GoogleSource = function GoogleSource(props) {
 };
 
 _defineProperty$6(GoogleSource, "propTypes", {
-  googleId: PropTypes.string
+  googleId: PropTypes__default.string
 });
 
 function _classCallCheck$7(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12572,7 +12574,7 @@ var GithubSource = function GithubSource(props) {
 };
 
 _defineProperty$7(GithubSource, "propTypes", {
-  githubHandle: PropTypes.string
+  githubHandle: PropTypes__default.string
 });
 
 function _classCallCheck$8(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12603,7 +12605,7 @@ var SkypeSource = function SkypeSource(props) {
 };
 
 _defineProperty$8(SkypeSource, "propTypes", {
-  skypeId: PropTypes.string
+  skypeId: PropTypes__default.string
 });
 
 function _classCallCheck$9(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12677,12 +12679,12 @@ function () {
 }();
 
 _defineProperty$9(ValueSource, "propTypes", {
-  color: PropTypes.string,
-  name: PropTypes.string,
-  value: PropTypes.string,
-  email: PropTypes.string,
-  maxInitials: PropTypes.number,
-  initials: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+  color: PropTypes__default.string,
+  name: PropTypes__default.string,
+  value: PropTypes__default.string,
+  email: PropTypes__default.string,
+  maxInitials: PropTypes__default.number,
+  initials: PropTypes__default.oneOfType([PropTypes__default.string, PropTypes__default.func])
 });
 
 function _classCallCheck$a(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12711,7 +12713,7 @@ var SrcSource = function SrcSource(props) {
 };
 
 _defineProperty$a(SrcSource, "propTypes", {
-  src: PropTypes.string
+  src: PropTypes__default.string
 });
 
 function _classCallCheck$b(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12746,7 +12748,7 @@ var IconSource = function IconSource(props) {
 };
 
 _defineProperty$b(IconSource, "propTypes", {
-  color: PropTypes.string
+  color: PropTypes__default.string
 });
 
 function _classCallCheck$c(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12781,7 +12783,7 @@ function createRedirectSource(network, property) {
     });
 
     this.props = props;
-  }, _defineProperty$c(_class, "propTypes", _defineProperty$c({}, property, PropTypes.oneOfType([PropTypes.string, PropTypes.number]))), _temp;
+  }, _defineProperty$c(_class, "propTypes", _defineProperty$c({}, property, PropTypes__default.oneOfType([PropTypes__default.string, PropTypes__default.number]))), _temp;
 }
 
 function _typeof$1(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$1 = function _typeof(obj) { return typeof obj; }; } else { _typeof$1 = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$1(obj); }
@@ -13075,18 +13077,18 @@ function (_PureComponent) {
 _defineProperty$d(Avatar, "displayName", 'Avatar');
 
 _defineProperty$d(Avatar, "propTypes", _objectSpread$1({}, sourcePropTypes, {
-  className: PropTypes.string,
-  fgColor: PropTypes.string,
-  color: PropTypes.string,
-  colors: PropTypes.arrayOf(PropTypes.string),
-  round: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-  style: PropTypes.object,
-  size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  textSizeRatio: PropTypes.number,
-  textMarginRatio: PropTypes.number,
-  unstyled: PropTypes.bool,
-  cache: PropTypes.object,
-  onClick: PropTypes.func
+  className: PropTypes__default.string,
+  fgColor: PropTypes__default.string,
+  color: PropTypes__default.string,
+  colors: PropTypes__default.arrayOf(PropTypes__default.string),
+  round: PropTypes__default.oneOfType([PropTypes__default.bool, PropTypes__default.string]),
+  style: PropTypes__default.object,
+  size: PropTypes__default.oneOfType([PropTypes__default.number, PropTypes__default.string]),
+  textSizeRatio: PropTypes__default.number,
+  textMarginRatio: PropTypes__default.number,
+  unstyled: PropTypes__default.bool,
+  cache: PropTypes__default.object,
+  onClick: PropTypes__default.func
 }));
 
 _defineProperty$d(Avatar, "defaultProps", {
@@ -24541,22 +24543,22 @@ function FontAwesomeIcon(props) {
 }
 FontAwesomeIcon.displayName = 'FontAwesomeIcon';
 FontAwesomeIcon.propTypes = {
-  border: PropTypes.bool,
-  className: PropTypes.string,
-  mask: PropTypes.oneOfType([PropTypes.object, PropTypes.array, PropTypes.string]),
-  fixedWidth: PropTypes.bool,
-  inverse: PropTypes.bool,
-  flip: PropTypes.oneOf(['horizontal', 'vertical', 'both']),
-  icon: PropTypes.oneOfType([PropTypes.object, PropTypes.array, PropTypes.string]),
-  listItem: PropTypes.bool,
-  pull: PropTypes.oneOf(['right', 'left']),
-  pulse: PropTypes.bool,
-  rotation: PropTypes.oneOf([90, 180, 270]),
-  size: PropTypes.oneOf(['lg', 'xs', 'sm', '1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x']),
-  spin: PropTypes.bool,
-  symbol: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-  title: PropTypes.string,
-  transform: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+  border: PropTypes__default.bool,
+  className: PropTypes__default.string,
+  mask: PropTypes__default.oneOfType([PropTypes__default.object, PropTypes__default.array, PropTypes__default.string]),
+  fixedWidth: PropTypes__default.bool,
+  inverse: PropTypes__default.bool,
+  flip: PropTypes__default.oneOf(['horizontal', 'vertical', 'both']),
+  icon: PropTypes__default.oneOfType([PropTypes__default.object, PropTypes__default.array, PropTypes__default.string]),
+  listItem: PropTypes__default.bool,
+  pull: PropTypes__default.oneOf(['right', 'left']),
+  pulse: PropTypes__default.bool,
+  rotation: PropTypes__default.oneOf([90, 180, 270]),
+  size: PropTypes__default.oneOf(['lg', 'xs', 'sm', '1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x']),
+  spin: PropTypes__default.bool,
+  symbol: PropTypes__default.oneOfType([PropTypes__default.bool, PropTypes__default.string]),
+  title: PropTypes__default.string,
+  transform: PropTypes__default.oneOfType([PropTypes__default.string, PropTypes__default.object])
 };
 FontAwesomeIcon.defaultProps = {
   border: false,
@@ -24650,6 +24652,2314 @@ var Sidebar = /** @class */ (function (_super) {
     };
     return Sidebar;
 }(React.Component));
+
+const is$1 = {
+  arr: Array.isArray,
+  obj: a => Object.prototype.toString.call(a) === '[object Object]',
+  fun: a => typeof a === 'function',
+  str: a => typeof a === 'string',
+  num: a => typeof a === 'number',
+  und: a => a === void 0,
+  nul: a => a === null,
+  set: a => a instanceof Set,
+  map: a => a instanceof Map,
+
+  equ(a, b) {
+    if (typeof a !== typeof b) return false;
+    if (is$1.str(a) || is$1.num(a)) return a === b;
+    if (is$1.obj(a) && is$1.obj(b) && Object.keys(a).length + Object.keys(b).length === 0) return true;
+    let i;
+
+    for (i in a) if (!(i in b)) return false;
+
+    for (i in b) if (a[i] !== b[i]) return false;
+
+    return is$1.und(i) ? a === b : true;
+  }
+
+};
+function merge(target, lowercase) {
+  if (lowercase === void 0) {
+    lowercase = true;
+  }
+
+  return object => (is$1.arr(object) ? object : Object.keys(object)).reduce((acc, element) => {
+    const key = lowercase ? element[0].toLowerCase() + element.substring(1) : element;
+    acc[key] = target(key);
+    return acc;
+  }, target);
+}
+function useForceUpdate() {
+  const _useState = React.useState(false),
+        f = _useState[1];
+
+  const forceUpdate = React.useCallback(() => f(v => !v), []);
+  return forceUpdate;
+}
+function withDefault(value, defaultValue) {
+  return is$1.und(value) || is$1.nul(value) ? defaultValue : value;
+}
+function toArray$1(a) {
+  return !is$1.und(a) ? is$1.arr(a) ? a : [a] : [];
+}
+function callProp(obj) {
+  for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    args[_key - 1] = arguments[_key];
+  }
+
+  return is$1.fun(obj) ? obj(...args) : obj;
+}
+
+function getForwardProps(props) {
+  const to = props.to,
+        from = props.from,
+        config = props.config,
+        onStart = props.onStart,
+        onRest = props.onRest,
+        onFrame = props.onFrame,
+        children = props.children,
+        reset = props.reset,
+        reverse = props.reverse,
+        force = props.force,
+        immediate = props.immediate,
+        delay = props.delay,
+        attach = props.attach,
+        destroyed = props.destroyed,
+        interpolateTo = props.interpolateTo,
+        ref = props.ref,
+        lazy = props.lazy,
+        forward = _objectWithoutPropertiesLoose(props, ["to", "from", "config", "onStart", "onRest", "onFrame", "children", "reset", "reverse", "force", "immediate", "delay", "attach", "destroyed", "interpolateTo", "ref", "lazy"]);
+
+  return forward;
+}
+
+function interpolateTo(props) {
+  const forward = getForwardProps(props);
+  if (is$1.und(forward)) return _extends({
+    to: forward
+  }, props);
+  const rest = Object.keys(props).reduce((a, k) => !is$1.und(forward[k]) ? a : _extends({}, a, {
+    [k]: props[k]
+  }), {});
+  return _extends({
+    to: forward
+  }, rest);
+}
+function handleRef(ref, forward) {
+  if (forward) {
+    // If it's a function, assume it's a ref callback
+    if (is$1.fun(forward)) forward(ref);else if (is$1.obj(forward)) {
+      forward.current = ref;
+    }
+  }
+
+  return ref;
+}
+
+class Animated {
+  constructor() {
+    this.payload = void 0;
+    this.children = [];
+  }
+
+  getAnimatedValue() {
+    return this.getValue();
+  }
+
+  getPayload() {
+    return this.payload || this;
+  }
+
+  attach() {}
+
+  detach() {}
+
+  getChildren() {
+    return this.children;
+  }
+
+  addChild(child) {
+    if (this.children.length === 0) this.attach();
+    this.children.push(child);
+  }
+
+  removeChild(child) {
+    const index = this.children.indexOf(child);
+    this.children.splice(index, 1);
+    if (this.children.length === 0) this.detach();
+  }
+
+}
+class AnimatedArray extends Animated {
+  constructor() {
+    super(...arguments);
+    this.payload = [];
+
+    this.attach = () => this.payload.forEach(p => p instanceof Animated && p.addChild(this));
+
+    this.detach = () => this.payload.forEach(p => p instanceof Animated && p.removeChild(this));
+  }
+
+}
+class AnimatedObject extends Animated {
+  constructor() {
+    super(...arguments);
+    this.payload = {};
+
+    this.attach = () => Object.values(this.payload).forEach(s => s instanceof Animated && s.addChild(this));
+
+    this.detach = () => Object.values(this.payload).forEach(s => s instanceof Animated && s.removeChild(this));
+  }
+
+  getValue(animated) {
+    if (animated === void 0) {
+      animated = false;
+    }
+
+    const payload = {};
+
+    for (const key in this.payload) {
+      const value = this.payload[key];
+      if (animated && !(value instanceof Animated)) continue;
+      payload[key] = value instanceof Animated ? value[animated ? 'getAnimatedValue' : 'getValue']() : value;
+    }
+
+    return payload;
+  }
+
+  getAnimatedValue() {
+    return this.getValue(true);
+  }
+
+}
+
+let applyAnimatedValues;
+function injectApplyAnimatedValues(fn, transform) {
+  applyAnimatedValues = {
+    fn,
+    transform
+  };
+}
+let colorNames;
+function injectColorNames(names) {
+  colorNames = names;
+}
+let requestFrame = cb => typeof window !== 'undefined' ? window.requestAnimationFrame(cb) : -1;
+let cancelFrame = id => {
+  typeof window !== 'undefined' && window.cancelAnimationFrame(id);
+};
+function injectFrame(raf, caf) {
+  requestFrame = raf;
+  cancelFrame = caf;
+}
+let interpolation;
+function injectStringInterpolator(fn) {
+  interpolation = fn;
+}
+let now = () => Date.now();
+function injectNow(nowFn) {
+  now = nowFn;
+}
+let defaultElement;
+function injectDefaultElement(el) {
+  defaultElement = el;
+}
+let animatedApi = node => node.current;
+function injectAnimatedApi(fn) {
+  animatedApi = fn;
+}
+let createAnimatedStyle;
+function injectCreateAnimatedStyle(factory) {
+  createAnimatedStyle = factory;
+}
+let manualFrameloop;
+function injectManualFrameloop(callback) {
+  manualFrameloop = callback;
+}
+
+var Globals = /*#__PURE__*/Object.freeze({
+  get applyAnimatedValues () { return applyAnimatedValues; },
+  injectApplyAnimatedValues: injectApplyAnimatedValues,
+  get colorNames () { return colorNames; },
+  injectColorNames: injectColorNames,
+  get requestFrame () { return requestFrame; },
+  get cancelFrame () { return cancelFrame; },
+  injectFrame: injectFrame,
+  get interpolation () { return interpolation; },
+  injectStringInterpolator: injectStringInterpolator,
+  get now () { return now; },
+  injectNow: injectNow,
+  get defaultElement () { return defaultElement; },
+  injectDefaultElement: injectDefaultElement,
+  get animatedApi () { return animatedApi; },
+  injectAnimatedApi: injectAnimatedApi,
+  get createAnimatedStyle () { return createAnimatedStyle; },
+  injectCreateAnimatedStyle: injectCreateAnimatedStyle,
+  get manualFrameloop () { return manualFrameloop; },
+  injectManualFrameloop: injectManualFrameloop
+});
+
+/**
+ * Wraps the `style` property with `AnimatedStyle`.
+ */
+
+class AnimatedProps extends AnimatedObject {
+  constructor(props, callback) {
+    super();
+    this.update = void 0;
+    this.payload = !props.style ? props : _extends({}, props, {
+      style: createAnimatedStyle(props.style)
+    });
+    this.update = callback;
+    this.attach();
+  }
+
+}
+
+const createAnimatedComponent = Component => {
+  const AnimatedComponent = React.forwardRef((props, _ref) => {
+    const forceUpdate = useForceUpdate();
+    const mounted = React.useRef(true);
+    const propsAnimated = React.useRef(null);
+    const node = React.useRef(null);
+    const attachProps = React.useCallback(props => {
+      const oldPropsAnimated = propsAnimated.current;
+
+      const callback = () => {
+        if (node.current) {
+          const didUpdate = applyAnimatedValues.fn(node.current, propsAnimated.current.getAnimatedValue());
+          if (didUpdate === false) forceUpdate();
+        }
+      };
+
+      propsAnimated.current = new AnimatedProps(props, callback);
+      oldPropsAnimated && oldPropsAnimated.detach();
+    }, []);
+    React.useEffect(() => () => {
+      mounted.current = false;
+      propsAnimated.current && propsAnimated.current.detach();
+    }, []);
+    React.useImperativeHandle(_ref, () => animatedApi(node, mounted, forceUpdate));
+    attachProps(props);
+
+    const _getValue = propsAnimated.current.getValue(),
+          scrollTop = _getValue.scrollTop,
+          scrollLeft = _getValue.scrollLeft,
+          animatedProps = _objectWithoutPropertiesLoose(_getValue, ["scrollTop", "scrollLeft"]);
+
+    return React__default.createElement(Component, _extends({}, animatedProps, {
+      ref: childRef => node.current = handleRef(childRef, _ref)
+    }));
+  });
+  return AnimatedComponent;
+};
+
+let active = false;
+const controllers = new Set();
+
+const update$1 = () => {
+  if (!active) return false;
+  let time = now();
+
+  for (let controller of controllers) {
+    let isActive = false;
+
+    for (let configIdx = 0; configIdx < controller.configs.length; configIdx++) {
+      let config = controller.configs[configIdx];
+      let endOfAnimation, lastTime;
+
+      for (let valIdx = 0; valIdx < config.animatedValues.length; valIdx++) {
+        let animation = config.animatedValues[valIdx]; // If an animation is done, skip, until all of them conclude
+
+        if (animation.done) continue;
+        let from = config.fromValues[valIdx];
+        let to = config.toValues[valIdx];
+        let position = animation.lastPosition;
+        let isAnimated = to instanceof Animated;
+        let velocity = Array.isArray(config.initialVelocity) ? config.initialVelocity[valIdx] : config.initialVelocity;
+        if (isAnimated) to = to.getValue(); // Conclude animation if it's either immediate, or from-values match end-state
+
+        if (config.immediate) {
+          animation.setValue(to);
+          animation.done = true;
+          continue;
+        } // Break animation when string values are involved
+
+
+        if (typeof from === 'string' || typeof to === 'string') {
+          animation.setValue(to);
+          animation.done = true;
+          continue;
+        }
+
+        if (config.duration !== void 0) {
+          /** Duration easing */
+          position = from + config.easing((time - animation.startTime) / config.duration) * (to - from);
+          endOfAnimation = time >= animation.startTime + config.duration;
+        } else if (config.decay) {
+          /** Decay easing */
+          position = from + velocity / (1 - 0.998) * (1 - Math.exp(-(1 - 0.998) * (time - animation.startTime)));
+          endOfAnimation = Math.abs(animation.lastPosition - position) < 0.1;
+          if (endOfAnimation) to = position;
+        } else {
+          /** Spring easing */
+          lastTime = animation.lastTime !== void 0 ? animation.lastTime : time;
+          velocity = animation.lastVelocity !== void 0 ? animation.lastVelocity : config.initialVelocity; // If we lost a lot of frames just jump to the end.
+
+          if (time > lastTime + 64) lastTime = time; // http://gafferongames.com/game-physics/fix-your-timestep/
+
+          let numSteps = Math.floor(time - lastTime);
+
+          for (let i = 0; i < numSteps; ++i) {
+            let force = -config.tension * (position - to);
+            let damping = -config.friction * velocity;
+            let acceleration = (force + damping) / config.mass;
+            velocity = velocity + acceleration * 1 / 1000;
+            position = position + velocity * 1 / 1000;
+          } // Conditions for stopping the spring animation
+
+
+          let isOvershooting = config.clamp && config.tension !== 0 ? from < to ? position > to : position < to : false;
+          let isVelocity = Math.abs(velocity) <= config.precision;
+          let isDisplacement = config.tension !== 0 ? Math.abs(to - position) <= config.precision : true;
+          endOfAnimation = isOvershooting || isVelocity && isDisplacement;
+          animation.lastVelocity = velocity;
+          animation.lastTime = time;
+        } // Trails aren't done until their parents conclude
+
+
+        if (isAnimated && !config.toValues[valIdx].done) endOfAnimation = false;
+
+        if (endOfAnimation) {
+          // Ensure that we end up with a round value
+          if (animation.value !== to) position = to;
+          animation.done = true;
+        } else isActive = true;
+
+        animation.setValue(position);
+        animation.lastPosition = position;
+      } // Keep track of updated values only when necessary
+
+
+      if (controller.props.onFrame) controller.values[config.name] = config.interpolation.getValue();
+    } // Update callbacks in the end of the frame
+
+
+    if (controller.props.onFrame) controller.props.onFrame(controller.values); // Either call onEnd or next frame
+
+    if (!isActive) {
+      controllers.delete(controller);
+      controller.stop(true);
+    }
+  } // Loop over as long as there are controllers ...
+
+
+  if (controllers.size) {
+    if (manualFrameloop) manualFrameloop();else requestFrame(update$1);
+  } else {
+    active = false;
+  }
+
+  return active;
+};
+
+const start = controller => {
+  if (!controllers.has(controller)) controllers.add(controller);
+
+  if (!active) {
+    active = true;
+    if (manualFrameloop) requestFrame(manualFrameloop);else requestFrame(update$1);
+  }
+};
+
+const stop = controller => {
+  if (controllers.has(controller)) controllers.delete(controller);
+};
+
+function createInterpolator(range, output, extrapolate) {
+  if (typeof range === 'function') {
+    return range;
+  }
+
+  if (Array.isArray(range)) {
+    return createInterpolator({
+      range,
+      output: output,
+      extrapolate
+    });
+  }
+
+  if (interpolation && typeof range.output[0] === 'string') {
+    return interpolation(range);
+  }
+
+  const config = range;
+  const outputRange = config.output;
+  const inputRange = config.range || [0, 1];
+  const extrapolateLeft = config.extrapolateLeft || config.extrapolate || 'extend';
+  const extrapolateRight = config.extrapolateRight || config.extrapolate || 'extend';
+
+  const easing = config.easing || (t => t);
+
+  return input => {
+    const range = findRange(input, inputRange);
+    return interpolate(input, inputRange[range], inputRange[range + 1], outputRange[range], outputRange[range + 1], easing, extrapolateLeft, extrapolateRight, config.map);
+  };
+}
+
+function interpolate(input, inputMin, inputMax, outputMin, outputMax, easing, extrapolateLeft, extrapolateRight, map) {
+  let result = map ? map(input) : input; // Extrapolate
+
+  if (result < inputMin) {
+    if (extrapolateLeft === 'identity') return result;else if (extrapolateLeft === 'clamp') result = inputMin;
+  }
+
+  if (result > inputMax) {
+    if (extrapolateRight === 'identity') return result;else if (extrapolateRight === 'clamp') result = inputMax;
+  }
+
+  if (outputMin === outputMax) return outputMin;
+  if (inputMin === inputMax) return input <= inputMin ? outputMin : outputMax; // Input Range
+
+  if (inputMin === -Infinity) result = -result;else if (inputMax === Infinity) result = result - inputMin;else result = (result - inputMin) / (inputMax - inputMin); // Easing
+
+  result = easing(result); // Output Range
+
+  if (outputMin === -Infinity) result = -result;else if (outputMax === Infinity) result = result + outputMin;else result = result * (outputMax - outputMin) + outputMin;
+  return result;
+}
+
+function findRange(input, inputRange) {
+  for (var i = 1; i < inputRange.length - 1; ++i) if (inputRange[i] >= input) break;
+
+  return i - 1;
+}
+
+class AnimatedInterpolation extends AnimatedArray {
+  constructor(parents, range, output) {
+    super();
+    this.calc = void 0;
+    this.payload = parents instanceof AnimatedArray && !(parents instanceof AnimatedInterpolation) ? parents.getPayload() : Array.isArray(parents) ? parents : [parents];
+    this.calc = createInterpolator(range, output);
+  }
+
+  getValue() {
+    return this.calc(...this.payload.map(value => value.getValue()));
+  }
+
+  updateConfig(range, output) {
+    this.calc = createInterpolator(range, output);
+  }
+
+  interpolate(range, output) {
+    return new AnimatedInterpolation(this, range, output);
+  }
+
+}
+
+/**
+ * Animated works by building a directed acyclic graph of dependencies
+ * transparently when you render your Animated components.
+ *
+ *               new Animated.Value(0)
+ *     .interpolate()        .interpolate()    new Animated.Value(1)
+ *         opacity               translateY      scale
+ *          style                         transform
+ *         View#234                         style
+ *                                         View#123
+ *
+ * A) Top Down phase
+ * When an AnimatedValue is updated, we recursively go down through this
+ * graph in order to find leaf nodes: the views that we flag as needing
+ * an update.
+ *
+ * B) Bottom Up phase
+ * When a view is flagged as needing an update, we recursively go back up
+ * in order to build the new value that it needs. The reason why we need
+ * this two-phases process is to deal with composite props such as
+ * transform which can receive values from multiple parents.
+ */
+function addAnimatedStyles(node, styles) {
+  if ('update' in node) {
+    styles.add(node);
+  } else {
+    node.getChildren().forEach(child => addAnimatedStyles(child, styles));
+  }
+}
+
+class AnimatedValue extends Animated {
+  constructor(_value) {
+    var _this;
+
+    super();
+    _this = this;
+    this.animatedStyles = new Set();
+    this.value = void 0;
+    this.startPosition = void 0;
+    this.lastPosition = void 0;
+    this.lastVelocity = void 0;
+    this.startTime = void 0;
+    this.lastTime = void 0;
+    this.done = false;
+
+    this.setValue = function (value, flush) {
+      if (flush === void 0) {
+        flush = true;
+      }
+
+      _this.value = value;
+      if (flush) _this.flush();
+    };
+
+    this.value = _value;
+    this.startPosition = _value;
+    this.lastPosition = _value;
+  }
+
+  flush() {
+    if (this.animatedStyles.size === 0) {
+      addAnimatedStyles(this, this.animatedStyles);
+    }
+
+    this.animatedStyles.forEach(animatedStyle => animatedStyle.update());
+  }
+
+  clearStyles() {
+    this.animatedStyles.clear();
+  }
+
+  getValue() {
+    return this.value;
+  }
+
+  interpolate(range, output) {
+    return new AnimatedInterpolation(this, range, output);
+  }
+
+}
+
+class AnimatedValueArray extends AnimatedArray {
+  constructor(values) {
+    super();
+    this.payload = values.map(n => new AnimatedValue(n));
+  }
+
+  setValue(value, flush) {
+    if (flush === void 0) {
+      flush = true;
+    }
+
+    if (Array.isArray(value)) {
+      if (value.length === this.payload.length) {
+        value.forEach((v, i) => this.payload[i].setValue(v, flush));
+      }
+    } else {
+      this.payload.forEach(p => p.setValue(value, flush));
+    }
+  }
+
+  getValue() {
+    return this.payload.map(v => v.getValue());
+  }
+
+  interpolate(range, output) {
+    return new AnimatedInterpolation(this, range, output);
+  }
+
+}
+
+let G = 0;
+
+class Controller {
+  constructor() {
+    this.id = void 0;
+    this.idle = true;
+    this.hasChanged = false;
+    this.guid = 0;
+    this.local = 0;
+    this.props = {};
+    this.merged = {};
+    this.animations = {};
+    this.interpolations = {};
+    this.values = {};
+    this.configs = [];
+    this.listeners = [];
+    this.queue = [];
+    this.localQueue = void 0;
+
+    this.getValues = () => this.interpolations;
+
+    this.id = G++;
+  }
+  /** update(props)
+   *  This function filters input props and creates an array of tasks which are executed in .start()
+   *  Each task is allowed to carry a delay, which means it can execute asnychroneously */
+
+
+  update(args) {
+    //this._id = n + this.id
+    if (!args) return this; // Extract delay and the to-prop from props
+
+    const _ref = interpolateTo(args),
+          _ref$delay = _ref.delay,
+          delay = _ref$delay === void 0 ? 0 : _ref$delay,
+          to = _ref.to,
+          props = _objectWithoutPropertiesLoose(_ref, ["delay", "to"]);
+
+    if (is$1.arr(to) || is$1.fun(to)) {
+      // If config is either a function or an array queue it up as is
+      this.queue.push(_extends({}, props, {
+        delay,
+        to
+      }));
+    } else if (to) {
+      // Otherwise go through each key since it could be delayed individually
+      let ops = {};
+      Object.entries(to).forEach((_ref2) => {
+        let k = _ref2[0],
+            v = _ref2[1];
+
+        // Fetch delay and create an entry, consisting of the to-props, the delay, and basic props
+        const entry = _extends({
+          to: {
+            [k]: v
+          },
+          delay: callProp(delay, k)
+        }, props);
+
+        const previous = ops[entry.delay] && ops[entry.delay].to;
+        ops[entry.delay] = _extends({}, ops[entry.delay], entry, {
+          to: _extends({}, previous, entry.to)
+        });
+      });
+      this.queue = Object.values(ops);
+    } // Sort queue, so that async calls go last
+
+
+    this.queue = this.queue.sort((a, b) => a.delay - b.delay); // Diff the reduced props immediately (they'll contain the from-prop and some config)
+
+    this.diff(props);
+    return this;
+  }
+  /** start(onEnd)
+   *  This function either executes a queue, if present, or starts the frameloop, which animates */
+
+
+  start(onEnd) {
+    // If a queue is present we must excecute it
+    if (this.queue.length) {
+      this.idle = false; // Updates can interrupt trailing queues, in that case we just merge values
+
+      if (this.localQueue) {
+        this.localQueue.forEach((_ref3) => {
+          let _ref3$from = _ref3.from,
+              from = _ref3$from === void 0 ? {} : _ref3$from,
+              _ref3$to = _ref3.to,
+              to = _ref3$to === void 0 ? {} : _ref3$to;
+          if (is$1.obj(from)) this.merged = _extends({}, from, this.merged);
+          if (is$1.obj(to)) this.merged = _extends({}, this.merged, to);
+        });
+      } // The guid helps us tracking frames, a new queue over an old one means an override
+      // We discard async calls in that caseÍ
+
+
+      const local = this.local = ++this.guid;
+      const queue = this.localQueue = this.queue;
+      this.queue = []; // Go through each entry and execute it
+
+      queue.forEach((_ref4, index) => {
+        let delay = _ref4.delay,
+            props = _objectWithoutPropertiesLoose(_ref4, ["delay"]);
+
+        const cb = finished => {
+          if (index === queue.length - 1 && local === this.guid && finished) {
+            this.idle = true;
+            if (this.props.onRest) this.props.onRest(this.merged);
+          }
+
+          if (onEnd) onEnd();
+        }; // Entries can be delayed, ansyc or immediate
+
+
+        let async = is$1.arr(props.to) || is$1.fun(props.to);
+
+        if (delay) {
+          setTimeout(() => {
+            if (local === this.guid) {
+              if (async) this.runAsync(props, cb);else this.diff(props).start(cb);
+            }
+          }, delay);
+        } else if (async) this.runAsync(props, cb);else this.diff(props).start(cb);
+      });
+    } // Otherwise we kick of the frameloop
+    else {
+        if (is$1.fun(onEnd)) this.listeners.push(onEnd);
+        if (this.props.onStart) this.props.onStart();
+        start(this);
+      }
+
+    return this;
+  }
+
+  stop(finished) {
+    this.listeners.forEach(onEnd => onEnd(finished));
+    this.listeners = [];
+    return this;
+  }
+  /** Pause sets onEnd listeners free, but also removes the controller from the frameloop */
+
+
+  pause(finished) {
+    this.stop(true);
+    if (finished) stop(this);
+    return this;
+  }
+
+  runAsync(_ref5, onEnd) {
+    var _this = this;
+
+    let delay = _ref5.delay,
+        props = _objectWithoutPropertiesLoose(_ref5, ["delay"]);
+
+    const local = this.local; // If "to" is either a function or an array it will be processed async, therefor "to" should be empty right now
+    // If the view relies on certain values "from" has to be present
+
+    let queue = Promise.resolve(undefined);
+
+    if (is$1.arr(props.to)) {
+      for (let i = 0; i < props.to.length; i++) {
+        const index = i;
+
+        const fresh = _extends({}, props, interpolateTo(props.to[index]));
+
+        if (is$1.arr(fresh.config)) fresh.config = fresh.config[index];
+        queue = queue.then(() => {
+          //this.stop()
+          if (local === this.guid) return new Promise(r => this.diff(fresh).start(r));
+        });
+      }
+    } else if (is$1.fun(props.to)) {
+      let index = 0;
+      let last;
+      queue = queue.then(() => props.to( // next(props)
+      p => {
+        const fresh = _extends({}, props, interpolateTo(p));
+
+        if (is$1.arr(fresh.config)) fresh.config = fresh.config[index];
+        index++; //this.stop()
+
+        if (local === this.guid) return last = new Promise(r => this.diff(fresh).start(r));
+        return;
+      }, // cancel()
+      function (finished) {
+        if (finished === void 0) {
+          finished = true;
+        }
+
+        return _this.stop(finished);
+      }).then(() => last));
+    }
+
+    queue.then(onEnd);
+  }
+
+  diff(props) {
+    this.props = _extends({}, this.props, props);
+    let _this$props = this.props,
+        _this$props$from = _this$props.from,
+        from = _this$props$from === void 0 ? {} : _this$props$from,
+        _this$props$to = _this$props.to,
+        to = _this$props$to === void 0 ? {} : _this$props$to,
+        _this$props$config = _this$props.config,
+        config = _this$props$config === void 0 ? {} : _this$props$config,
+        reverse = _this$props.reverse,
+        attach = _this$props.attach,
+        reset = _this$props.reset,
+        immediate = _this$props.immediate; // Reverse values when requested
+
+    if (reverse) {
+      var _ref6 = [to, from];
+      from = _ref6[0];
+      to = _ref6[1];
+    } // This will collect all props that were ever set, reset merged props when necessary
+
+
+    this.merged = _extends({}, from, this.merged, to);
+    this.hasChanged = false; // Attachment handling, trailed springs can "attach" themselves to a previous spring
+
+    let target = attach && attach(this); // Reduces input { name: value } pairs into animated values
+
+    this.animations = Object.entries(this.merged).reduce((acc, _ref7) => {
+      let name = _ref7[0],
+          value = _ref7[1];
+      // Issue cached entries, except on reset
+      let entry = acc[name] || {}; // Figure out what the value is supposed to be
+
+      const isNumber = is$1.num(value);
+      const isString = is$1.str(value) && !value.startsWith('#') && !/\d/.test(value) && !colorNames[value];
+      const isArray = is$1.arr(value);
+      const isInterpolation = !isNumber && !isArray && !isString;
+      let fromValue = !is$1.und(from[name]) ? from[name] : value;
+      let toValue = isNumber || isArray ? value : isString ? value : 1;
+      let toConfig = callProp(config, name);
+      if (target) toValue = target.animations[name].parent;
+      let parent = entry.parent,
+          interpolation$$1 = entry.interpolation,
+          toValues = toArray$1(target ? toValue.getPayload() : toValue),
+          animatedValues;
+      let newValue = value;
+      if (isInterpolation) newValue = interpolation({
+        range: [0, 1],
+        output: [value, value]
+      })(1);
+      let currentValue = interpolation$$1 && interpolation$$1.getValue(); // Change detection flags
+
+      const isFirst = is$1.und(parent);
+      const isActive = !isFirst && entry.animatedValues.some(v => !v.done);
+      const currentValueDiffersFromGoal = !is$1.equ(newValue, currentValue);
+      const hasNewGoal = !is$1.equ(newValue, entry.previous);
+      const hasNewConfig = !is$1.equ(toConfig, entry.config); // Change animation props when props indicate a new goal (new value differs from previous one)
+      // and current values differ from it. Config changes trigger a new update as well (though probably shouldn't?)
+
+      if (reset || hasNewGoal && currentValueDiffersFromGoal || hasNewConfig) {
+        // Convert regular values into animated values, ALWAYS re-use if possible
+        if (isNumber || isString) parent = interpolation$$1 = entry.parent || new AnimatedValue(fromValue);else if (isArray) parent = interpolation$$1 = entry.parent || new AnimatedValueArray(fromValue);else if (isInterpolation) {
+          let prev = entry.interpolation && entry.interpolation.calc(entry.parent.value);
+          prev = prev !== void 0 && !reset ? prev : fromValue;
+
+          if (entry.parent) {
+            parent = entry.parent;
+            parent.setValue(0, false);
+          } else parent = new AnimatedValue(0);
+
+          const range = {
+            output: [prev, value]
+          };
+
+          if (entry.interpolation) {
+            interpolation$$1 = entry.interpolation;
+            entry.interpolation.updateConfig(range);
+          } else interpolation$$1 = parent.interpolate(range);
+        }
+        toValues = toArray$1(target ? toValue.getPayload() : toValue);
+        animatedValues = toArray$1(parent.getPayload());
+        if (reset && !isInterpolation) parent.setValue(fromValue, false);
+        this.hasChanged = true; // Reset animated values
+
+        animatedValues.forEach(value => {
+          value.startPosition = value.value;
+          value.lastPosition = value.value;
+          value.lastVelocity = isActive ? value.lastVelocity : undefined;
+          value.lastTime = isActive ? value.lastTime : undefined;
+          value.startTime = now();
+          value.done = false;
+          value.animatedStyles.clear();
+        }); // Set immediate values
+
+        if (callProp(immediate, name)) {
+          parent.setValue(isInterpolation ? toValue : value, false);
+        }
+
+        return _extends({}, acc, {
+          [name]: _extends({}, entry, {
+            name,
+            parent,
+            interpolation: interpolation$$1,
+            animatedValues,
+            toValues,
+            previous: newValue,
+            config: toConfig,
+            fromValues: toArray$1(parent.getValue()),
+            immediate: callProp(immediate, name),
+            initialVelocity: withDefault(toConfig.velocity, 0),
+            clamp: withDefault(toConfig.clamp, false),
+            precision: withDefault(toConfig.precision, 0.01),
+            tension: withDefault(toConfig.tension, 170),
+            friction: withDefault(toConfig.friction, 26),
+            mass: withDefault(toConfig.mass, 1),
+            duration: toConfig.duration,
+            easing: withDefault(toConfig.easing, t => t),
+            decay: toConfig.decay
+          })
+        });
+      } else {
+        if (!currentValueDiffersFromGoal) {
+          // So ... the current target value (newValue) appears to be different from the previous value,
+          // which normally constitutes an update, but the actual value (currentValue) matches the target!
+          // In order to resolve this without causing an animation update we silently flag the animation as done,
+          // which it technically is. Interpolations also needs a config update with their target set to 1.
+          if (isInterpolation) {
+            parent.setValue(1, false);
+            interpolation$$1.updateConfig({
+              output: [newValue, newValue]
+            });
+          }
+
+          parent.done = true;
+          this.hasChanged = true;
+          return _extends({}, acc, {
+            [name]: _extends({}, acc[name], {
+              previous: newValue
+            })
+          });
+        }
+
+        return acc;
+      }
+    }, this.animations);
+
+    if (this.hasChanged) {
+      // Make animations available to frameloop
+      this.configs = Object.values(this.animations);
+      this.values = {};
+      this.interpolations = {};
+
+      for (let key in this.animations) {
+        this.interpolations[key] = this.animations[key].interpolation;
+        this.values[key] = this.animations[key].interpolation.getValue();
+      }
+    }
+
+    return this;
+  }
+
+  destroy() {
+    this.stop();
+    this.props = {};
+    this.merged = {};
+    this.animations = {};
+    this.interpolations = {};
+    this.values = {};
+    this.configs = [];
+    this.local = 0;
+  }
+
+}
+
+/** API
+ * const transitions = useTransition(items, itemKeys, { ... })
+ * const [transitions, update] = useTransition(items, itemKeys, () => ({ ... }))
+ */
+
+let guid = 0;
+const ENTER = 'enter';
+const LEAVE = 'leave';
+const UPDATE = 'update';
+
+const mapKeys = (items, keys) => (typeof keys === 'function' ? items.map(keys) : toArray$1(keys)).map(String);
+
+const get = props => {
+  let items = props.items,
+      _props$keys = props.keys,
+      keys = _props$keys === void 0 ? item => item : _props$keys,
+      rest = _objectWithoutPropertiesLoose(props, ["items", "keys"]);
+
+  items = toArray$1(items !== void 0 ? items : null);
+  return _extends({
+    items,
+    keys: mapKeys(items, keys)
+  }, rest);
+};
+
+function useTransition(input, keyTransform, config) {
+  const props = _extends({
+    items: input,
+    keys: keyTransform || (i => i)
+  }, config);
+
+  const _get = get(props),
+        _get$lazy = _get.lazy,
+        lazy = _get$lazy === void 0 ? false : _get$lazy,
+        _get$unique = _get.unique,
+        _get$reset = _get.reset,
+        reset = _get$reset === void 0 ? false : _get$reset,
+        enter = _get.enter,
+        leave = _get.leave,
+        update = _get.update,
+        onDestroyed = _get.onDestroyed,
+        keys = _get.keys,
+        items = _get.items,
+        onFrame = _get.onFrame,
+        _onRest = _get.onRest,
+        onStart = _get.onStart,
+        ref = _get.ref,
+        extra = _objectWithoutPropertiesLoose(_get, ["lazy", "unique", "reset", "enter", "leave", "update", "onDestroyed", "keys", "items", "onFrame", "onRest", "onStart", "ref"]);
+
+  const forceUpdate = useForceUpdate();
+  const mounted = React.useRef(false);
+  const state = React.useRef({
+    mounted: false,
+    first: true,
+    deleted: [],
+    current: {},
+    transitions: [],
+    prevProps: {},
+    paused: !!props.ref,
+    instances: !mounted.current && new Map(),
+    forceUpdate
+  });
+  React.useImperativeHandle(props.ref, () => ({
+    start: () => Promise.all(Array.from(state.current.instances).map((_ref) => {
+      let c = _ref[1];
+      return new Promise(r => c.start(r));
+    })),
+    stop: finished => Array.from(state.current.instances).forEach((_ref2) => {
+      let c = _ref2[1];
+      return c.stop(finished);
+    }),
+
+    get controllers() {
+      return Array.from(state.current.instances).map((_ref3) => {
+        let c = _ref3[1];
+        return c;
+      });
+    }
+
+  })); // Update state
+
+  state.current = diffItems(state.current, props);
+
+  if (state.current.changed) {
+    // Update state
+    state.current.transitions.forEach(transition => {
+      const slot = transition.slot,
+            from = transition.from,
+            to = transition.to,
+            config = transition.config,
+            trail = transition.trail,
+            key = transition.key,
+            item = transition.item;
+      if (!state.current.instances.has(key)) state.current.instances.set(key, new Controller()); // update the map object
+
+      const ctrl = state.current.instances.get(key);
+
+      const newProps = _extends({}, extra, {
+        to,
+        from,
+        config,
+        ref,
+        onRest: values => {
+          if (state.current.mounted) {
+            if (transition.destroyed) {
+              // If no ref is given delete destroyed items immediately
+              if (!ref && !lazy) cleanUp(state, key);
+              if (onDestroyed) onDestroyed(item);
+            } // A transition comes to rest once all its springs conclude
+
+
+            const curInstances = Array.from(state.current.instances);
+            const active = curInstances.some((_ref4) => {
+              let c = _ref4[1];
+              return !c.idle;
+            });
+            if (!active && (ref || lazy) && state.current.deleted.length > 0) cleanUp(state);
+            if (_onRest) _onRest(item, slot, values);
+          }
+        },
+        onStart: onStart && (() => onStart(item, slot)),
+        onFrame: onFrame && (values => onFrame(item, slot, values)),
+        delay: trail,
+        reset: reset && slot === ENTER // Update controller
+
+      });
+
+      ctrl.update(newProps);
+      if (!state.current.paused) ctrl.start();
+    });
+  }
+
+  React.useEffect(() => {
+    state.current.mounted = mounted.current = true;
+    return () => {
+      state.current.mounted = mounted.current = false;
+      Array.from(state.current.instances).map((_ref5) => {
+        let c = _ref5[1];
+        return c.destroy();
+      });
+      state.current.instances.clear();
+    };
+  }, []);
+  return state.current.transitions.map((_ref6) => {
+    let item = _ref6.item,
+        slot = _ref6.slot,
+        key = _ref6.key;
+    return {
+      item,
+      key,
+      state: slot,
+      props: state.current.instances.get(key).getValues()
+    };
+  });
+}
+
+function cleanUp(state, filterKey) {
+  const deleted = state.current.deleted;
+
+  for (let _ref7 of deleted) {
+    let key = _ref7.key;
+
+    const filter = t => t.key !== key;
+
+    if (is$1.und(filterKey) || filterKey === key) {
+      state.current.instances.delete(key);
+      state.current.transitions = state.current.transitions.filter(filter);
+      state.current.deleted = state.current.deleted.filter(filter);
+    }
+  }
+
+  state.current.forceUpdate();
+}
+
+function diffItems(_ref8, props) {
+  let first = _ref8.first,
+      prevProps = _ref8.prevProps,
+      state = _objectWithoutPropertiesLoose(_ref8, ["first", "prevProps"]);
+
+  let _get2 = get(props),
+      items = _get2.items,
+      keys = _get2.keys,
+      initial = _get2.initial,
+      from = _get2.from,
+      enter = _get2.enter,
+      leave = _get2.leave,
+      update = _get2.update,
+      _get2$trail = _get2.trail,
+      trail = _get2$trail === void 0 ? 0 : _get2$trail,
+      unique = _get2.unique,
+      config = _get2.config,
+      _get2$order = _get2.order,
+      order = _get2$order === void 0 ? [ENTER, LEAVE, UPDATE] : _get2$order;
+
+  let _get3 = get(prevProps),
+      _keys = _get3.keys,
+      _items = _get3.items;
+
+  let current = _extends({}, state.current);
+
+  let deleted = [...state.deleted]; // Compare next keys with current keys
+
+  let currentKeys = Object.keys(current);
+  let currentSet = new Set(currentKeys);
+  let nextSet = new Set(keys);
+  let added = keys.filter(item => !currentSet.has(item));
+  let removed = state.transitions.filter(item => !item.destroyed && !nextSet.has(item.originalKey)).map(i => i.originalKey);
+  let updated = keys.filter(item => currentSet.has(item));
+  let delay = -trail;
+
+  while (order.length) {
+    const changeType = order.shift();
+
+    switch (changeType) {
+      case ENTER:
+        {
+          added.forEach((key, index) => {
+            // In unique mode, remove fading out transitions if their key comes in again
+            if (unique && deleted.find(d => d.originalKey === key)) deleted = deleted.filter(t => t.originalKey !== key);
+            const keyIndex = keys.indexOf(key);
+            const item = items[keyIndex];
+            const slot = first && initial !== void 0 ? 'initial' : ENTER;
+            current[key] = {
+              slot,
+              originalKey: key,
+              key: unique ? String(key) : guid++,
+              item,
+              trail: delay = delay + trail,
+              config: callProp(config, item, slot),
+              from: callProp(first ? initial !== void 0 ? initial || {} : from : from, item),
+              to: callProp(enter, item)
+            };
+          });
+          break;
+        }
+
+      case LEAVE:
+        {
+          removed.forEach(key => {
+            const keyIndex = _keys.indexOf(key);
+
+            const item = _items[keyIndex];
+            const slot = LEAVE;
+            deleted.unshift(_extends({}, current[key], {
+              slot,
+              destroyed: true,
+              left: _keys[Math.max(0, keyIndex - 1)],
+              right: _keys[Math.min(_keys.length, keyIndex + 1)],
+              trail: delay = delay + trail,
+              config: callProp(config, item, slot),
+              to: callProp(leave, item)
+            }));
+            delete current[key];
+          });
+          break;
+        }
+
+      case UPDATE:
+        {
+          updated.forEach(key => {
+            const keyIndex = keys.indexOf(key);
+            const item = items[keyIndex];
+            const slot = UPDATE;
+            current[key] = _extends({}, current[key], {
+              item,
+              slot,
+              trail: delay = delay + trail,
+              config: callProp(config, item, slot),
+              to: callProp(update, item)
+            });
+          });
+          break;
+        }
+    }
+  }
+
+  let out = keys.map(key => current[key]); // This tries to restore order for deleted items by finding their last known siblings
+  // only using the left sibling to keep order placement consistent for all deleted items
+
+  deleted.forEach((_ref9) => {
+    let left = _ref9.left,
+        right = _ref9.right,
+        item = _objectWithoutPropertiesLoose(_ref9, ["left", "right"]);
+
+    let pos; // Was it the element on the left, if yes, move there ...
+
+    if ((pos = out.findIndex(t => t.originalKey === left)) !== -1) pos += 1; // And if nothing else helps, move it to the start ¯\_(ツ)_/¯
+
+    pos = Math.max(0, pos);
+    out = [...out.slice(0, pos), item, ...out.slice(pos)];
+  });
+  return _extends({}, state, {
+    changed: added.length || removed.length || updated.length,
+    first: first && added.length === 0,
+    transitions: out,
+    current,
+    deleted,
+    prevProps: props
+  });
+}
+
+class AnimatedStyle extends AnimatedObject {
+  constructor(style) {
+    if (style === void 0) {
+      style = {};
+    }
+
+    super();
+
+    if (style.transform && !(style.transform instanceof Animated)) {
+      style = applyAnimatedValues.transform(style);
+    }
+
+    this.payload = style;
+  }
+
+}
+
+// http://www.w3.org/TR/css3-color/#svg-color
+const colors = {
+  transparent: 0x00000000,
+  aliceblue: 0xf0f8ffff,
+  antiquewhite: 0xfaebd7ff,
+  aqua: 0x00ffffff,
+  aquamarine: 0x7fffd4ff,
+  azure: 0xf0ffffff,
+  beige: 0xf5f5dcff,
+  bisque: 0xffe4c4ff,
+  black: 0x000000ff,
+  blanchedalmond: 0xffebcdff,
+  blue: 0x0000ffff,
+  blueviolet: 0x8a2be2ff,
+  brown: 0xa52a2aff,
+  burlywood: 0xdeb887ff,
+  burntsienna: 0xea7e5dff,
+  cadetblue: 0x5f9ea0ff,
+  chartreuse: 0x7fff00ff,
+  chocolate: 0xd2691eff,
+  coral: 0xff7f50ff,
+  cornflowerblue: 0x6495edff,
+  cornsilk: 0xfff8dcff,
+  crimson: 0xdc143cff,
+  cyan: 0x00ffffff,
+  darkblue: 0x00008bff,
+  darkcyan: 0x008b8bff,
+  darkgoldenrod: 0xb8860bff,
+  darkgray: 0xa9a9a9ff,
+  darkgreen: 0x006400ff,
+  darkgrey: 0xa9a9a9ff,
+  darkkhaki: 0xbdb76bff,
+  darkmagenta: 0x8b008bff,
+  darkolivegreen: 0x556b2fff,
+  darkorange: 0xff8c00ff,
+  darkorchid: 0x9932ccff,
+  darkred: 0x8b0000ff,
+  darksalmon: 0xe9967aff,
+  darkseagreen: 0x8fbc8fff,
+  darkslateblue: 0x483d8bff,
+  darkslategray: 0x2f4f4fff,
+  darkslategrey: 0x2f4f4fff,
+  darkturquoise: 0x00ced1ff,
+  darkviolet: 0x9400d3ff,
+  deeppink: 0xff1493ff,
+  deepskyblue: 0x00bfffff,
+  dimgray: 0x696969ff,
+  dimgrey: 0x696969ff,
+  dodgerblue: 0x1e90ffff,
+  firebrick: 0xb22222ff,
+  floralwhite: 0xfffaf0ff,
+  forestgreen: 0x228b22ff,
+  fuchsia: 0xff00ffff,
+  gainsboro: 0xdcdcdcff,
+  ghostwhite: 0xf8f8ffff,
+  gold: 0xffd700ff,
+  goldenrod: 0xdaa520ff,
+  gray: 0x808080ff,
+  green: 0x008000ff,
+  greenyellow: 0xadff2fff,
+  grey: 0x808080ff,
+  honeydew: 0xf0fff0ff,
+  hotpink: 0xff69b4ff,
+  indianred: 0xcd5c5cff,
+  indigo: 0x4b0082ff,
+  ivory: 0xfffff0ff,
+  khaki: 0xf0e68cff,
+  lavender: 0xe6e6faff,
+  lavenderblush: 0xfff0f5ff,
+  lawngreen: 0x7cfc00ff,
+  lemonchiffon: 0xfffacdff,
+  lightblue: 0xadd8e6ff,
+  lightcoral: 0xf08080ff,
+  lightcyan: 0xe0ffffff,
+  lightgoldenrodyellow: 0xfafad2ff,
+  lightgray: 0xd3d3d3ff,
+  lightgreen: 0x90ee90ff,
+  lightgrey: 0xd3d3d3ff,
+  lightpink: 0xffb6c1ff,
+  lightsalmon: 0xffa07aff,
+  lightseagreen: 0x20b2aaff,
+  lightskyblue: 0x87cefaff,
+  lightslategray: 0x778899ff,
+  lightslategrey: 0x778899ff,
+  lightsteelblue: 0xb0c4deff,
+  lightyellow: 0xffffe0ff,
+  lime: 0x00ff00ff,
+  limegreen: 0x32cd32ff,
+  linen: 0xfaf0e6ff,
+  magenta: 0xff00ffff,
+  maroon: 0x800000ff,
+  mediumaquamarine: 0x66cdaaff,
+  mediumblue: 0x0000cdff,
+  mediumorchid: 0xba55d3ff,
+  mediumpurple: 0x9370dbff,
+  mediumseagreen: 0x3cb371ff,
+  mediumslateblue: 0x7b68eeff,
+  mediumspringgreen: 0x00fa9aff,
+  mediumturquoise: 0x48d1ccff,
+  mediumvioletred: 0xc71585ff,
+  midnightblue: 0x191970ff,
+  mintcream: 0xf5fffaff,
+  mistyrose: 0xffe4e1ff,
+  moccasin: 0xffe4b5ff,
+  navajowhite: 0xffdeadff,
+  navy: 0x000080ff,
+  oldlace: 0xfdf5e6ff,
+  olive: 0x808000ff,
+  olivedrab: 0x6b8e23ff,
+  orange: 0xffa500ff,
+  orangered: 0xff4500ff,
+  orchid: 0xda70d6ff,
+  palegoldenrod: 0xeee8aaff,
+  palegreen: 0x98fb98ff,
+  paleturquoise: 0xafeeeeff,
+  palevioletred: 0xdb7093ff,
+  papayawhip: 0xffefd5ff,
+  peachpuff: 0xffdab9ff,
+  peru: 0xcd853fff,
+  pink: 0xffc0cbff,
+  plum: 0xdda0ddff,
+  powderblue: 0xb0e0e6ff,
+  purple: 0x800080ff,
+  rebeccapurple: 0x663399ff,
+  red: 0xff0000ff,
+  rosybrown: 0xbc8f8fff,
+  royalblue: 0x4169e1ff,
+  saddlebrown: 0x8b4513ff,
+  salmon: 0xfa8072ff,
+  sandybrown: 0xf4a460ff,
+  seagreen: 0x2e8b57ff,
+  seashell: 0xfff5eeff,
+  sienna: 0xa0522dff,
+  silver: 0xc0c0c0ff,
+  skyblue: 0x87ceebff,
+  slateblue: 0x6a5acdff,
+  slategray: 0x708090ff,
+  slategrey: 0x708090ff,
+  snow: 0xfffafaff,
+  springgreen: 0x00ff7fff,
+  steelblue: 0x4682b4ff,
+  tan: 0xd2b48cff,
+  teal: 0x008080ff,
+  thistle: 0xd8bfd8ff,
+  tomato: 0xff6347ff,
+  turquoise: 0x40e0d0ff,
+  violet: 0xee82eeff,
+  wheat: 0xf5deb3ff,
+  white: 0xffffffff,
+  whitesmoke: 0xf5f5f5ff,
+  yellow: 0xffff00ff,
+  yellowgreen: 0x9acd32ff
+};
+
+// const INTEGER = '[-+]?\\d+';
+const NUMBER = '[-+]?\\d*\\.?\\d+';
+const PERCENTAGE = NUMBER + '%';
+
+function call() {
+  for (var _len = arguments.length, parts = new Array(_len), _key = 0; _key < _len; _key++) {
+    parts[_key] = arguments[_key];
+  }
+
+  return '\\(\\s*(' + parts.join(')\\s*,\\s*(') + ')\\s*\\)';
+}
+
+const rgb = new RegExp('rgb' + call(NUMBER, NUMBER, NUMBER));
+const rgba = new RegExp('rgba' + call(NUMBER, NUMBER, NUMBER, NUMBER));
+const hsl = new RegExp('hsl' + call(NUMBER, PERCENTAGE, PERCENTAGE));
+const hsla = new RegExp('hsla' + call(NUMBER, PERCENTAGE, PERCENTAGE, NUMBER));
+const hex3 = /^#([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/;
+const hex4 = /^#([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/;
+const hex6 = /^#([0-9a-fA-F]{6})$/;
+const hex8 = /^#([0-9a-fA-F]{8})$/;
+
+/*
+https://github.com/react-community/normalize-css-color
+
+BSD 3-Clause License
+
+Copyright (c) 2016, React Community
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+* Neither the name of the copyright holder nor the names of its
+  contributors may be used to endorse or promote products derived from
+  this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+function normalizeColor(color) {
+  let match;
+
+  if (typeof color === 'number') {
+    return color >>> 0 === color && color >= 0 && color <= 0xffffffff ? color : null;
+  } // Ordered based on occurrences on Facebook codebase
+
+
+  if (match = hex6.exec(color)) return parseInt(match[1] + 'ff', 16) >>> 0;
+  if (colors.hasOwnProperty(color)) return colors[color];
+
+  if (match = rgb.exec(color)) {
+    return (parse255(match[1]) << 24 | // r
+    parse255(match[2]) << 16 | // g
+    parse255(match[3]) << 8 | // b
+    0x000000ff) >>> // a
+    0;
+  }
+
+  if (match = rgba.exec(color)) {
+    return (parse255(match[1]) << 24 | // r
+    parse255(match[2]) << 16 | // g
+    parse255(match[3]) << 8 | // b
+    parse1(match[4])) >>> // a
+    0;
+  }
+
+  if (match = hex3.exec(color)) {
+    return parseInt(match[1] + match[1] + // r
+    match[2] + match[2] + // g
+    match[3] + match[3] + // b
+    'ff', // a
+    16) >>> 0;
+  } // https://drafts.csswg.org/css-color-4/#hex-notation
+
+
+  if (match = hex8.exec(color)) return parseInt(match[1], 16) >>> 0;
+
+  if (match = hex4.exec(color)) {
+    return parseInt(match[1] + match[1] + // r
+    match[2] + match[2] + // g
+    match[3] + match[3] + // b
+    match[4] + match[4], // a
+    16) >>> 0;
+  }
+
+  if (match = hsl.exec(color)) {
+    return (hslToRgb(parse360(match[1]), // h
+    parsePercentage(match[2]), // s
+    parsePercentage(match[3]) // l
+    ) | 0x000000ff) >>> // a
+    0;
+  }
+
+  if (match = hsla.exec(color)) {
+    return (hslToRgb(parse360(match[1]), // h
+    parsePercentage(match[2]), // s
+    parsePercentage(match[3]) // l
+    ) | parse1(match[4])) >>> // a
+    0;
+  }
+
+  return null;
+}
+
+function hue2rgb(p, q, t) {
+  if (t < 0) t += 1;
+  if (t > 1) t -= 1;
+  if (t < 1 / 6) return p + (q - p) * 6 * t;
+  if (t < 1 / 2) return q;
+  if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+  return p;
+}
+
+function hslToRgb(h, s, l) {
+  const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+  const p = 2 * l - q;
+  const r = hue2rgb(p, q, h + 1 / 3);
+  const g = hue2rgb(p, q, h);
+  const b = hue2rgb(p, q, h - 1 / 3);
+  return Math.round(r * 255) << 24 | Math.round(g * 255) << 16 | Math.round(b * 255) << 8;
+}
+
+function parse255(str) {
+  const int = parseInt(str, 10);
+  if (int < 0) return 0;
+  if (int > 255) return 255;
+  return int;
+}
+
+function parse360(str) {
+  const int = parseFloat(str);
+  return (int % 360 + 360) % 360 / 360;
+}
+
+function parse1(str) {
+  const num = parseFloat(str);
+  if (num < 0) return 0;
+  if (num > 1) return 255;
+  return Math.round(num * 255);
+}
+
+function parsePercentage(str) {
+  // parseFloat conveniently ignores the final %
+  const int = parseFloat(str);
+  if (int < 0) return 0;
+  if (int > 100) return 1;
+  return int / 100;
+}
+
+function colorToRgba(input) {
+  let int32Color = normalizeColor(input);
+  if (int32Color === null) return input;
+  int32Color = int32Color || 0;
+  let r = (int32Color & 0xff000000) >>> 24;
+  let g = (int32Color & 0x00ff0000) >>> 16;
+  let b = (int32Color & 0x0000ff00) >>> 8;
+  let a = (int32Color & 0x000000ff) / 255;
+  return `rgba(${r}, ${g}, ${b}, ${a})`;
+} // Problem: https://github.com/animatedjs/animated/pull/102
+// Solution: https://stackoverflow.com/questions/638565/parsing-scientific-notation-sensibly/658662
+
+
+const stringShapeRegex = /[+\-]?(?:0|[1-9]\d*)(?:\.\d*)?(?:[eE][+\-]?\d+)?/g; // Covers rgb, rgba, hsl, hsla
+// Taken from https://gist.github.com/olmokramer/82ccce673f86db7cda5e
+
+const colorRegex = /(#(?:[0-9a-f]{2}){2,4}|(#[0-9a-f]{3})|(rgb|hsl)a?\((-?\d+%?[,\s]+){2,3}\s*[\d\.]+%?\))/gi; // Covers color names (transparent, blue, etc.)
+
+const colorNamesRegex = new RegExp(`(${Object.keys(colors).join('|')})`, 'g');
+/**
+ * Supports string shapes by extracting numbers so new values can be computed,
+ * and recombines those values into new strings of the same shape.  Supports
+ * things like:
+ *
+ *   rgba(123, 42, 99, 0.36)           // colors
+ *   -45deg                            // values with units
+ *   0 2px 2px 0px rgba(0, 0, 0, 0.12) // box shadows
+ */
+
+const createStringInterpolator = config => {
+  // Replace colors with rgba
+  const outputRange = config.output.map(rangeValue => rangeValue.replace(colorRegex, colorToRgba)).map(rangeValue => rangeValue.replace(colorNamesRegex, colorToRgba));
+  const outputRanges = outputRange[0].match(stringShapeRegex).map(() => []);
+  outputRange.forEach(value => {
+    value.match(stringShapeRegex).forEach((number, i) => outputRanges[i].push(+number));
+  });
+  const interpolations = outputRange[0].match(stringShapeRegex).map((_value, i) => createInterpolator(_extends({}, config, {
+    output: outputRanges[i]
+  })));
+  return input => {
+    let i = 0;
+    return outputRange[0] // 'rgba(0, 100, 200, 0)'
+    // ->
+    // 'rgba(${interpolations[0](input)}, ${interpolations[1](input)}, ...'
+    .replace(stringShapeRegex, () => interpolations[i++](input)) // rgba requires that the r,g,b are integers.... so we want to round them, but we *dont* want to
+    // round the opacity (4th column).
+    .replace(/rgba\(([0-9\.-]+), ([0-9\.-]+), ([0-9\.-]+), ([0-9\.-]+)\)/gi, (_, p1, p2, p3, p4) => `rgba(${Math.round(p1)}, ${Math.round(p2)}, ${Math.round(p3)}, ${p4})`);
+  };
+};
+
+let isUnitlessNumber = {
+  animationIterationCount: true,
+  borderImageOutset: true,
+  borderImageSlice: true,
+  borderImageWidth: true,
+  boxFlex: true,
+  boxFlexGroup: true,
+  boxOrdinalGroup: true,
+  columnCount: true,
+  columns: true,
+  flex: true,
+  flexGrow: true,
+  flexPositive: true,
+  flexShrink: true,
+  flexNegative: true,
+  flexOrder: true,
+  gridRow: true,
+  gridRowEnd: true,
+  gridRowSpan: true,
+  gridRowStart: true,
+  gridColumn: true,
+  gridColumnEnd: true,
+  gridColumnSpan: true,
+  gridColumnStart: true,
+  fontWeight: true,
+  lineClamp: true,
+  lineHeight: true,
+  opacity: true,
+  order: true,
+  orphans: true,
+  tabSize: true,
+  widows: true,
+  zIndex: true,
+  zoom: true,
+  // SVG-related properties
+  fillOpacity: true,
+  floodOpacity: true,
+  stopOpacity: true,
+  strokeDasharray: true,
+  strokeDashoffset: true,
+  strokeMiterlimit: true,
+  strokeOpacity: true,
+  strokeWidth: true
+};
+
+const prefixKey = (prefix, key) => prefix + key.charAt(0).toUpperCase() + key.substring(1);
+
+const prefixes = ['Webkit', 'Ms', 'Moz', 'O'];
+isUnitlessNumber = Object.keys(isUnitlessNumber).reduce((acc, prop) => {
+  prefixes.forEach(prefix => acc[prefixKey(prefix, prop)] = acc[prop]);
+  return acc;
+}, isUnitlessNumber);
+
+function dangerousStyleValue(name, value, isCustomProperty) {
+  if (value == null || typeof value === 'boolean' || value === '') return '';
+  if (!isCustomProperty && typeof value === 'number' && value !== 0 && !(isUnitlessNumber.hasOwnProperty(name) && isUnitlessNumber[name])) return value + 'px'; // Presumes implicit 'px' suffix for unitless numbers
+
+  return ('' + value).trim();
+}
+
+const attributeCache = {};
+injectCreateAnimatedStyle(style => new AnimatedStyle(style));
+injectDefaultElement('div');
+injectStringInterpolator(createStringInterpolator);
+injectColorNames(colors);
+injectApplyAnimatedValues((instance, props) => {
+  if (instance.nodeType && instance.setAttribute !== undefined) {
+    const style = props.style,
+          children = props.children,
+          scrollTop = props.scrollTop,
+          scrollLeft = props.scrollLeft,
+          attributes = _objectWithoutPropertiesLoose(props, ["style", "children", "scrollTop", "scrollLeft"]);
+
+    const filter = instance.nodeName === 'filter' || instance.parentNode && instance.parentNode.nodeName === 'filter';
+    if (scrollTop !== void 0) instance.scrollTop = scrollTop;
+    if (scrollLeft !== void 0) instance.scrollLeft = scrollLeft; // Set textContent, if children is an animatable value
+
+    if (children !== void 0) instance.textContent = children; // Set styles ...
+
+    for (let styleName in style) {
+      if (!style.hasOwnProperty(styleName)) continue;
+      var isCustomProperty = styleName.indexOf('--') === 0;
+      var styleValue = dangerousStyleValue(styleName, style[styleName], isCustomProperty);
+      if (styleName === 'float') styleName = 'cssFloat';
+      if (isCustomProperty) instance.style.setProperty(styleName, styleValue);else instance.style[styleName] = styleValue;
+    } // Set attributes ...
+
+
+    for (let name in attributes) {
+      // Attributes are written in dash case
+      const dashCase = filter ? name : attributeCache[name] || (attributeCache[name] = name.replace(/([A-Z])/g, n => '-' + n.toLowerCase()));
+      if (typeof instance.getAttribute(dashCase) !== 'undefined') instance.setAttribute(dashCase, attributes[name]);
+    }
+
+    return;
+  } else return false;
+}, style => style);
+
+const domElements = ['a', 'abbr', 'address', 'area', 'article', 'aside', 'audio', 'b', 'base', 'bdi', 'bdo', 'big', 'blockquote', 'body', 'br', 'button', 'canvas', 'caption', 'cite', 'code', 'col', 'colgroup', 'data', 'datalist', 'dd', 'del', 'details', 'dfn', 'dialog', 'div', 'dl', 'dt', 'em', 'embed', 'fieldset', 'figcaption', 'figure', 'footer', 'form', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hgroup', 'hr', 'html', 'i', 'iframe', 'img', 'input', 'ins', 'kbd', 'keygen', 'label', 'legend', 'li', 'link', 'main', 'map', 'mark', 'menu', 'menuitem', 'meta', 'meter', 'nav', 'noscript', 'object', 'ol', 'optgroup', 'option', 'output', 'p', 'param', 'picture', 'pre', 'progress', 'q', 'rp', 'rt', 'ruby', 's', 'samp', 'script', 'section', 'select', 'small', 'source', 'span', 'strong', 'style', 'sub', 'summary', 'sup', 'table', 'tbody', 'td', 'textarea', 'tfoot', 'th', 'thead', 'time', 'title', 'tr', 'track', 'u', 'ul', 'var', 'video', 'wbr', // SVG
+'circle', 'clipPath', 'defs', 'ellipse', 'foreignObject', 'g', 'image', 'line', 'linearGradient', 'mask', 'path', 'pattern', 'polygon', 'polyline', 'radialGradient', 'rect', 'stop', 'svg', 'text', 'tspan'];
+// Extend animated with all the available THREE elements
+const apply = merge(createAnimatedComponent, false);
+const extendedAnimated = apply(domElements);
+
+function _classCallCheck$f(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn$2(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits$2(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _objectWithoutProperties$1(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+var cleanProps = function cleanProps(props) {
+  var initialState = props.initialState,
+      getInitialState = props.getInitialState,
+      refs = props.refs,
+      getRefs = props.getRefs,
+      didMount = props.didMount,
+      didUpdate = props.didUpdate,
+      willUnmount = props.willUnmount,
+      getSnapshotBeforeUpdate = props.getSnapshotBeforeUpdate,
+      shouldUpdate = props.shouldUpdate,
+      render = props.render,
+      rest = _objectWithoutProperties$1(props, ["initialState", "getInitialState", "refs", "getRefs", "didMount", "didUpdate", "willUnmount", "getSnapshotBeforeUpdate", "shouldUpdate", "render"]);
+
+  return rest;
+};
+
+var Component = function (_React$Component) {
+  _inherits$2(Component, _React$Component);
+
+  function Component() {
+    var _temp, _this, _ret;
+
+    _classCallCheck$f(this, Component);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn$2(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _initialiseProps.call(_this), _temp), _possibleConstructorReturn$2(_this, _ret);
+  }
+
+  Component.prototype.getArgs = function getArgs() {
+    var state = this.state,
+        props = this.props,
+        setState = this._setState,
+        forceUpdate = this._forceUpdate,
+        refs = this._refs;
+
+    return {
+      state: state,
+      props: cleanProps(props),
+      refs: refs,
+      setState: setState,
+      forceUpdate: forceUpdate
+    };
+  };
+
+  Component.prototype.componentDidMount = function componentDidMount() {
+    if (this.props.didMount) this.props.didMount(this.getArgs());
+  };
+
+  Component.prototype.shouldComponentUpdate = function shouldComponentUpdate(nextProps, nextState) {
+    if (this.props.shouldUpdate) return this.props.shouldUpdate({
+      props: this.props,
+      state: this.state,
+      nextProps: cleanProps(nextProps),
+      nextState: nextState
+    });else return true;
+  };
+
+  Component.prototype.componentWillUnmount = function componentWillUnmount() {
+    if (this.props.willUnmount) this.props.willUnmount({
+      state: this.state,
+      props: cleanProps(this.props),
+      refs: this._refs
+    });
+  };
+
+  Component.prototype.componentDidUpdate = function componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.props.didUpdate) this.props.didUpdate(Object.assign(this.getArgs(), {
+      prevProps: cleanProps(prevProps),
+      prevState: prevState
+    }), snapshot);
+  };
+
+  Component.prototype.getSnapshotBeforeUpdate = function getSnapshotBeforeUpdate(prevProps, prevState) {
+    if (this.props.getSnapshotBeforeUpdate) {
+      return this.props.getSnapshotBeforeUpdate(Object.assign(this.getArgs(), {
+        prevProps: cleanProps(prevProps),
+        prevState: prevState
+      }));
+    } else {
+      return null;
+    }
+  };
+
+  Component.prototype.render = function render() {
+    var _props = this.props,
+        children = _props.children,
+        render = _props.render;
+
+    return render ? render(this.getArgs()) : typeof children === "function" ? children(this.getArgs()) : children || null;
+  };
+
+  return Component;
+}(React__default.Component);
+
+Component.defaultProps = {
+  getInitialState: function getInitialState() {},
+  getRefs: function getRefs() {
+    return {};
+  }
+};
+
+var _initialiseProps = function _initialiseProps() {
+  var _this2 = this;
+
+  this.state = this.props.initialState || this.props.getInitialState(this.props);
+  this._refs = this.props.refs || this.props.getRefs(this.getArgs());
+
+  this._setState = function () {
+    return _this2.setState.apply(_this2, arguments);
+  };
+
+  this._forceUpdate = function () {
+    return _this2.forceUpdate.apply(_this2, arguments);
+  };
+};
+
+process.env.NODE_ENV !== "production" ? Component.propTypes = {
+  initialState: PropTypes.object,
+  getInitialState: PropTypes.func,
+  refs: PropTypes.object,
+  getRefs: PropTypes.func,
+  didMount: PropTypes.func,
+  didUpdate: PropTypes.func,
+  willUnmount: PropTypes.func,
+  getSnapshotBeforeUpdate: PropTypes.func,
+  shouldUpdate: PropTypes.func,
+  render: PropTypes.func,
+  children: PropTypes.oneOfType([PropTypes.func, PropTypes.node])
+} : void 0;
+
+var _extends$3 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var style = {
+  border: 0,
+  clip: "rect(0 0 0 0)",
+  height: "1px",
+  width: "1px",
+  margin: "-1px",
+  padding: 0,
+  overflow: "hidden",
+  position: "absolute"
+};
+
+var VisuallyHidden = (function (props) {
+  return React__default.createElement("div", _extends$3({ style: style }, props));
+});
+
+var _extends$4 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _objectWithoutProperties$2(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+// singleton state is fine because you don't server render
+// an alert (SRs don't read them on first load anyway)
+var keys$2 = {
+  polite: -1,
+  assertive: -1
+};
+
+var elements = {
+  polite: {},
+  assertive: {}
+};
+
+var liveRegions = {
+  polite: null,
+  assertive: null
+};
+
+var renderTimer = null;
+
+var renderAlerts = function renderAlerts() {
+  clearTimeout(renderTimer);
+
+  renderTimer = setTimeout(function () {
+    Object.keys(elements).forEach(function (type) {
+      var container = liveRegions[type];
+      if (container) {
+        ReactDOM.render(React__default.createElement(
+          VisuallyHidden,
+          null,
+          React__default.createElement(
+            "div",
+            {
+              role: type === "assertive" ? "alert" : "status",
+              "aria-live": type
+            },
+            Object.keys(elements[type]).map(function (key) {
+              return React__default.cloneElement(elements[type][key], {
+                key: key
+              });
+            })
+          )
+        ), liveRegions[type]);
+      }
+    });
+  }, 500);
+};
+
+var createMirror = function createMirror(type) {
+  var key = ++keys$2[type];
+
+  var mount = function mount(element) {
+    if (liveRegions[type]) {
+      elements[type][key] = element;
+      renderAlerts();
+    } else {
+      var _node = document.createElement("div");
+      _node.setAttribute("data-reach-live-" + type, "true");
+      liveRegions[type] = _node;
+      document.body.appendChild(liveRegions[type]);
+      mount(element);
+    }
+  };
+
+  var update = function update(element) {
+    elements[type][key] = element;
+    renderAlerts();
+  };
+
+  var unmount = function unmount(element) {
+    delete elements[type][key];
+    renderAlerts();
+  };
+
+  return { mount: mount, update: update, unmount: unmount };
+};
+
+var Alert$1 = function Alert(_ref) {
+  var children = _ref.children,
+      type = _ref.type,
+      props = _objectWithoutProperties$2(_ref, ["children", "type"]);
+
+  var element = React__default.createElement(
+    "div",
+    _extends$4({}, props, { "data-reach-alert": true }),
+    children
+  );
+  return React__default.createElement(Component, {
+    type: type,
+    getRefs: function getRefs() {
+      return { mirror: createMirror(type) };
+    },
+    didMount: function didMount(_ref2) {
+      var refs = _ref2.refs;
+      return refs.mirror.mount(element);
+    },
+    didUpdate: function didUpdate(_ref3) {
+      var refs = _ref3.refs,
+          prevProps = _ref3.prevProps;
+
+      if (prevProps.type !== type) {
+        refs.mirror.unmount();
+        refs.mirror = createMirror(type);
+        refs.mirror.mount(element);
+      } else {
+        refs.mirror.update(element, prevProps.type, type);
+      }
+    },
+    willUnmount: function willUnmount(_ref4) {
+      var refs = _ref4.refs;
+      return refs.mirror.unmount(element);
+    },
+    children: element
+  });
+};
+
+process.env.NODE_ENV !== "production" ? Alert$1.propTypes = {
+  children: PropTypes.node,
+  type: PropTypes.string
+} : void 0;
+
+Alert$1.defaultProps = {
+  type: "polite"
+};
+
+const Alert$2 = ({ id, title, onClose }) => {
+    return (React.createElement("div", { id: id, className: "Toaster__alert" },
+        typeof title === "string" ? (React.createElement("div", { className: "Toaster__alert_text" }, title)) : (title),
+        onClose && React.createElement(Close, { onClose: onClose })));
+};
+const Close = ({ onClose }) => (React.createElement("button", { className: "Toaster__alert_close", type: "button", "aria-label": "Close", onClick: onClose },
+    React.createElement("span", { "aria-hidden": "true" }, "\u00D7")));
+
+function useTimeout(callback, delay) {
+    const savedCallback = React.useRef();
+    // Remember the latest callback.
+    React.useEffect(() => {
+        savedCallback.current = callback;
+    }, [callback]);
+    // Set up the interval.
+    React.useEffect(() => {
+        function tick() {
+            if (savedCallback.current) {
+                savedCallback.current();
+            }
+        }
+        if (delay !== null) {
+            let id = setTimeout(tick, delay);
+            return () => clearTimeout(id);
+        }
+    }, [delay]);
+}
+
+const getStyle = (position) => {
+    let style = {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
+    };
+    if (position.includes("right")) {
+        style.alignItems = "flex-end";
+    }
+    else if (position.includes("left")) {
+        style.alignItems = "flex-start";
+    }
+    return style;
+};
+const Message = ({ id, message, position, onRequestRemove, duration = 30000 }) => {
+    const container = React.useRef(null);
+    const [timeout, setTimeout] = React.useState(duration);
+    const [localShow, setLocalShow] = React.useState(true);
+    const isFromTop = position === "top-left" || position === "top-right" || position === "top";
+    useTimeout(close, timeout);
+    const animation = {
+        config: { mass: 1, tension: 185, friction: 26 },
+        from: {
+            opacity: 1,
+            height: 0,
+            transform: `translateY(${isFromTop ? "-100%" : 0}) scale(1)`
+        },
+        enter: () => (next) => next({
+            opacity: 1,
+            height: container.current.getBoundingClientRect().height,
+            transform: `translateY(0) scale(1)`
+        }),
+        leave: {
+            opacity: 0,
+            height: 0,
+            transform: `translateY(0 scale(0.9)`
+        },
+        onRest
+    };
+    const transition = useTransition(localShow, null, animation);
+    const style = React.useMemo(() => getStyle(position), [position]);
+    function onMouseEnter() {
+        setTimeout(null);
+    }
+    function onMouseLeave() {
+        setTimeout(duration);
+    }
+    function onRest() {
+        if (!localShow) {
+            onRequestRemove();
+        }
+    }
+    function close() {
+        setLocalShow(false);
+    }
+    function renderMessage() {
+        if (typeof message === "string" || React.isValidElement(message)) {
+            return React.createElement(Alert$2, { id: id, title: message, onClose: close });
+        }
+        if (typeof message === "function") {
+            return message({
+                id,
+                onClose: close
+            });
+        }
+        return null;
+    }
+    return (React.createElement(React.Fragment, null, transition.map(({ key, item, props }) => item && (React.createElement(extendedAnimated.div, { key: key, className: "Toaster__message", onMouseEnter: onMouseEnter, onMouseLeave: onMouseLeave, style: Object.assign({ opacity: props.opacity, height: props.height }, style) },
+        React.createElement(extendedAnimated.div, { style: {
+                transform: props.transform,
+                pointerEvents: "auto"
+            }, ref: container, className: "Toaster__message-wrapper" },
+            React.createElement(Alert$1, null, renderMessage())))))));
+};
+
+class ToastManager extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            "top-left": [],
+            top: [],
+            "top-right": [],
+            "bottom-left": [],
+            bottom: [],
+            "bottom-right": []
+        };
+        this.notify = (message, options) => {
+            const toast = this.createToastState(message, options);
+            const { position } = toast;
+            // prepend the toast for toasts positioned at the top of
+            // the screen, otherwise append it.
+            const isTop = position.includes("top");
+            this.setState(prev => {
+                return Object.assign({}, prev, { [position]: isTop
+                        ? [toast, ...prev[position]]
+                        : [...prev[position], toast] });
+            });
+        };
+        this.createToastState = (message, options) => {
+            const id = ++ToastManager.idCounter;
+            // a bit messy, but object.position returns a number because
+            // it's a method argument.
+            const position = options.hasOwnProperty("position") && typeof options.position === "string"
+                ? options.position
+                : "top";
+            return {
+                id,
+                message,
+                position,
+                showing: true,
+                duration: typeof options.duration === "undefined" ? 5000 : options.duration,
+                onRequestRemove: () => this.removeToast(String(id), position),
+                type: options.type
+            };
+        };
+        // actually fully remove the toast
+        this.removeToast = (id, position) => {
+            this.setState(prev => {
+                return Object.assign({}, prev, { [position]: prev[position].filter(toast => toast.id !== id) });
+            });
+        };
+        this.getStyle = (position) => {
+            let style = {
+                maxWidth: "560px",
+                position: "fixed",
+                zIndex: 5500,
+                pointerEvents: "none"
+            };
+            if (position === "top" || position === "bottom") {
+                style.margin = "0 auto";
+                style.textAlign = "center";
+            }
+            if (position.includes("top")) {
+                style.top = 0;
+            }
+            if (position.includes("bottom")) {
+                style.bottom = 0;
+            }
+            if (!position.includes("left")) {
+                style.right = 0;
+            }
+            if (!position.includes("right")) {
+                style.left = 0;
+            }
+            return style;
+        };
+        props.notify(this.notify);
+    }
+    render() {
+        return Object.keys(this.state).map(position => {
+            const pos = position;
+            const toasts = this.state[pos];
+            return (React.createElement("span", { key: position, className: "Toaster__manager-" + pos, style: this.getStyle(pos) }, toasts.map((toast) => {
+                return React.createElement(Message, Object.assign({ position: pos, key: toast.id }, toast));
+            })));
+        });
+    }
+}
+ToastManager.idCounter = 0;
+
+const isBrowser$1 = typeof window !== "undefined" && typeof window.document !== "undefined";
+const PORTAL_ID = "react-toast";
+class Toaster {
+    constructor() {
+        this.bindNotify = (fn) => {
+            this.createNotification = fn;
+        };
+        this.notify = (message, options = {}) => {
+            if (this.createNotification) {
+                this.createNotification(message, options);
+            }
+        };
+        if (!isBrowser$1) {
+            return;
+        }
+        let portalElement;
+        const existingPortalElement = document.getElementById(PORTAL_ID);
+        if (existingPortalElement) {
+            portalElement = existingPortalElement;
+        }
+        else {
+            const el = document.createElement("div");
+            el.id = PORTAL_ID;
+            el.className = "Toaster";
+            if (document.body != null) {
+                document.body.appendChild(el);
+            }
+            portalElement = el;
+        }
+        ReactDOM.render(React.createElement(ToastManager, { notify: this.bindNotify }), portalElement);
+    }
+}
+
+const toaster = new Toaster();
+
+var options = {
+    duration: 2000,
+    position: 'top-right',
+};
+var Toaster$1 = /** @class */ (function () {
+    function Toaster() {
+    }
+    Toaster.prototype.show = function (message, color, position) {
+        if (color === void 0) { color = "light"; }
+        if (position === void 0) { position = 'top-right'; }
+        return toaster.notify(function (_a) { return (React.createElement(Alert, { color: color }, message)); }, __assign({}, options, { position: position }));
+    };
+    Toaster.prototype.error = function (message) {
+        return toaster.notify(function (_a) { return (React.createElement(Alert, { color: "danger" }, message)); }, __assign({}, options, { type: 'error' }));
+    };
+    Toaster.prototype.info = function (message) {
+        return toaster.notify(function (_a) { return (React.createElement(Alert, { color: "info" }, message)); }, __assign({}, options, { type: 'error' }));
+    };
+    Toaster.prototype.success = function (message) {
+        return toaster.notify(function (_a) { return (React.createElement(Alert, { color: "success" }, message)); }, __assign({}, options, { type: 'error' }));
+    };
+    return Toaster;
+}());
+
+var toaster$1 = new Toaster$1();
 
 var Authorized = /** @class */ (function (_super) {
     __extends(Authorized, _super);
@@ -24967,4 +27277,5 @@ exports.Pagination = Pagination$1;
 exports.Confirm = Confirm;
 exports.hasRole = hasRole;
 exports.getUser = getUser;
+exports.toaster = toaster$1;
 //# sourceMappingURL=index.js.map

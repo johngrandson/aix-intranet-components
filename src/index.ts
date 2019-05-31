@@ -13,7 +13,8 @@ import Confirm from "./Confirm";
 // services
 export {
   hasRole,
-  getUser
+  getUser,
+  toaster
 }
   from "./services/";
 
