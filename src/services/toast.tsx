@@ -6,7 +6,7 @@ import { PositionsType } from 'toasted-notes/lib/Message';
 
 const options: MessageOptionalOptions = {
   duration: 2000,
-  position: 'top-right',
+  position: 'bottom-left',
 }
 
 class Toaster {
