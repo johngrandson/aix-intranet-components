@@ -56,31 +56,6 @@ class Sidebar extends Component<Props> {
   // creates the links that appear in the left menu / Sidebar
   createLinks = (routes: RouteDefinition[]) => {
     return routes.map((prop, key) => (
-<<<<<<< HEAD
-      prop.name === 'Home' ?
-        <NavItem key={key}>
-          <a
-            className="nav-link"
-            href={prop.path}
-            onClick={this.closeCollapse}
-          >
-            <i className={prop.icon} />
-            {prop.name} !!!
-          </a>
-          <div className="divider" />
-        </NavItem>
-        :
-        <NavItem key={key}>
-          <a
-            className="nav-link"
-            href={prop.path}
-            onClick={this.closeCollapse}
-          >
-            <i className={prop.icon} />
-            {prop.name}
-          </a>
-        </NavItem>
-=======
       <NavItem key={key}>
         <a className="nav-link" href={prop.path} onClick={this.closeCollapse} >
           <FontAwesomeIcon icon={prop.icon} className="mr-2" />
@@ -88,7 +63,6 @@ class Sidebar extends Component<Props> {
         </a>
         {prop.appendSeparator && <div className="divider" />}
       </NavItem>
->>>>>>> cf657676c847957ae22e491ae37f92153015bc09
     ));
   };
   render() {
