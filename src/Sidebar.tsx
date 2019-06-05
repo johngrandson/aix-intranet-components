@@ -59,7 +59,7 @@ class Sidebar extends Component<Props> {
             onClick={this.closeCollapse}
           >
             <i className={prop.icon} />
-            {prop.name}
+            {prop.name} !!!
           </a>
           <div className="divider" />
         </NavItem>

@@ -23046,7 +23046,8 @@ var Sidebar = /** @class */ (function (_super) {
                 React.createElement(NavItem, { key: key },
                     React.createElement("a", { className: "nav-link", href: prop.path, onClick: _this.closeCollapse },
                         React.createElement("i", { className: prop.icon }),
-                        prop.name),
+                        prop.name,
+                        " !!!"),
                     React.createElement("div", { className: "divider" }))
                 :
                     React.createElement(NavItem, { key: key },
