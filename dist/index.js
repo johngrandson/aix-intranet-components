@@ -9952,8 +9952,9 @@ var Footer = /** @class */ (function (_super) {
             React.createElement(Row, { className: "align-items-center justify-content-xl-between" },
                 React.createElement(Col, { xl: "6" },
                     React.createElement("div", { className: "copyright text-center text-xl-left text-muted" },
-                        "\u00A9 2019",
+                        "\u00A9 Todos os direitos reservados para ",
                         " ",
+                        " 2019",
                         React.createElement("a", { className: "font-weight-bold ml-1", href: "#", rel: "noopener noreferrer", target: "_blank" }, "All InvestX"))))));
     };
     return Footer;
