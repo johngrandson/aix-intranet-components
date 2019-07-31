@@ -9951,11 +9951,7 @@ var Footer = /** @class */ (function (_super) {
         return (React.createElement("footer", { className: "footer mt-auto py-3" },
             React.createElement(Row, { className: "align-items-center justify-content-xl-between" },
                 React.createElement(Col, { xl: "6" },
-                    React.createElement("div", { className: "copyright text-center text-xl-left text-muted" },
-                        "\u00A9 Todos os direitos reservados para ",
-                        " ",
-                        " 2019",
-                        React.createElement("a", { className: "font-weight-bold ml-1", href: "#", rel: "noopener noreferrer", target: "_blank" }, "All InvestX"))))));
+                    React.createElement("div", { className: "copyright text-center text-xl-left text-muted" }, "\u00A9 ALL INVESTX - 2019. Todos os direitos reservados.")))));
     };
     return Footer;
 }(React.Component));
